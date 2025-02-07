@@ -1,0 +1,1 @@
+git commit -am 'work6 commit by master'
