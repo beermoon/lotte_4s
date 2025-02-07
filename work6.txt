@@ -2,4 +2,5 @@ git commit -am 'work6 commit by master'
 
 
 
-content by feature/sohyeon abcde
+content by feature/sohyeon abcde kimsohyeon
+
