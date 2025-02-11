@@ -8,8 +8,23 @@
  1. 팜스토리 소개 ~ 커뮤니티 디자인 완료하기
 
 ## push pull 시간
- - 12:50 push 하기
- - 14:00 (팀장) pull request 하기
- - 17:50 push 하기
- - 19:00 (팀장) pull request 하기
+ - 12:50분 오전작업 push
+ - 점심시간 merge
+ - 17:50분 오후작업 push
+ - 19:00분 오후작업 merge
+ - 19:00 ~ 9:00(다음날) 개인작업 push
+ - 9:00(다음날) 개인작업 merge
 
+
+## 주말 push pull 시간
+
+### 금
+- 17:50분 오후작업 push
+- 19:00분 오후작업 merge
+
+### 토
+- push , merge 안함
+
+### 일
+- 일요일 저녁에 push
+- 다음날 9:00시 merge
