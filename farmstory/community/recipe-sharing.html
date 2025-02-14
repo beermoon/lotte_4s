@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter' sans-serif;
+    }
+    ul, ol {list-style: none;}
+    a {text-decoration: none; color: #111;}
+    header {
+        position: relative;
+        width: 980px;
+        height: 142px;
+        margin:0 auto;
+        
+    }
+    header > img:nth-child(1) {
+        position: absolute;
+        top: 20px;
+        left: 395px;
+    }
+    header > img:nth-child(2) {
+        position: absolute;
+        top: 59px;
+        left: 751px;
+    }
+    header > .home {
+        position: absolute;
+        top: 17px;
+        right: 5px;
+        display: flex;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    header > nav {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 92px;
+        display: flex;
+        padding: 0 1px; /*임의 설정값*/
+        box-sizing: border-box;
+    }
+    .nav_item {
+        position: relative;
+        width: 196px;
+        height: 50px;
+        
+    }
+    .nav_item > img {
+        position: absolute;
+        margin-top: -5px; /*임의 설정값*/
+    }
+    .nav_item > a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+    .nav_item > ul{
+        position: absolute;
+        display: block;
+        width: 50%;
+        height: 100%;
+        bottom: 17px;
+        left: 95px;
+      
+        
+    }
+    .nav_item  > a:hover{
+    }
+    main {
+        width: 980px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    
+    main > .main_top {
+        width: 100%;
+        height: 184px;
+        background-image: url("../images/sub_top_bg.jpg");
+        position: relative;
+    }
+    main > .main_top > img {
+        position: absolute;
+        top: 137px;
+        left: 10px;
+    }
+    main > .main_btm {
+        width: 100%;
+        height: 650px;
+    }
+    main > .main_btm > aside {
+        position: relative;
+        float: left;
+        width: 176px;
+        height: 100%;
+        /*그림자*/
+    }
+    main > .main_btm > aside > img:nth-child(1) {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
+    main > .main_btm > aside > img:nth-child(2) {
+        position: absolute;
+        top: 40px; /*임의 설정값*/
+        right: 0px;
+    }
+    main aside .list {
+        position: absolute;
+        width: 175px;
+        height: 233px;
+        background-image: url("/images/sub_aside_bg_lnb.png");
+        top: 81px;
+        right: 1px; /*임의 설정값*/
+        padding-top: 30px;
+        box-sizing: border-box;
+    }
+    main aside .list li {        
+        width: 175px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+
+    main aside .list li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+    }
+    /*====================*/
+    main aside .list li:nth-child(1) > a{background-image: url("../images/sub_cate5_lnb1.png");}
+    main aside .list li:nth-child(1) > a:hover{background-image: url("../images/sub_cate5_lnb1_ov.png");}
+    main aside .list li:nth-child(2) > a{background-image: url("../images/sub_cate5_lnb2.png");}
+    main aside .list li:nth-child(2) > a:hover{background-image: url("../images/sub_cate5_lnb2_ov.png");}
+    main aside .list li:nth-child(3) > a{background-image: url("../images/sub_cate5_lnb3.png");}
+    main aside .list li:nth-child(3) > a:hover{background-image: url("../images/sub_cate5_lnb3_ov.png");}
+    main aside .list li:nth-child(3).on > a{background-image: url("../images/sub_cate5_lnb3_ov.png");}
+    main aside .list li:nth-child(4) > a{background-image: url("../images/sub_cate5_lnb4.png");}
+    main aside .list li:nth-child(4) > a:hover{background-image: url("../images/sub_cate5_lnb4_ov.png");}
+    main aside .list li:nth-child(5) > a{background-image: url("../images/sub_cate5_lnb5.png");}
+    main aside .list li:nth-child(5) > a:hover{background-image: url("../images/sub_cate5_lnb5_ov.png");}
+    /*====================*/
+    main > .main_btm > article {
+        position: relative;
+        width: 802px;
+        height: 100%;
+        float: right;
+    }
+    main > .main_btm > article > nav {
+        position: absolute;
+        width: 762px;
+        height: 72px;
+        left: 40px;
+        border-bottom: 1px solid #C2C2C2;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+    main > .main_btm > article > nav > img {
+        position: absolute;
+        top: 41px;
+        font-weight: 700;
+        display: flex;
+    }
+    main > .main_btm  nav > div {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: auto;
+        top: 44px;
+        right: 5px;
+    }
+    main > .main_btm  nav > div > ul {
+       padding-right: 4px;
+       padding-bottom: 7px;
+    }
+    main > .main_btm > article > nav a {
+        font-size: 12px;
+        font-weight: 400;
+        color: #8C8C8C;
+    }
+
+    main > .main_btm > article > nav a:nth-of-type(3) {
+        color: #91BA15;
+    }
+
+    main > .main_btm > article > section {
+        position: absolute;
+        height: 878px;
+        left: 40px;
+        right: 0px;
+        top: 112px;
+    }
+
+    main > .main_btm > article > section > span {
+        position: absolute;
+        width: 36.2px;
+        height: 14px;
+        left: 0px;
+        top: 1px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+    }
+
+    main > .main_btm > article > section > form {
+        position: absolute;
+        height: 452px;
+        left: 0px;
+        right: 0px;
+        top: 17px;
+    }
+
+    .form-group1 {
+        position: absolute;
+        width: 762px;
+        height: 51.5px;
+        left: 0px;
+        top: calc(50% - 51.5px/2 - 181px);
+        border-top: 2px solid #111111;
+    }
+        
+    .form-group1 > label:nth-of-type(1) {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 112px;
+        height: 51px;
+        left: 0px;
+        top: calc(50% - 51px/2 + 0.75px);
+
+        background: #F5F8F9;
+        border-bottom: 1px solid #E9E9E9;
+
+    }
+
+    .form-group1 > label > span {
+        position: absolute;
+        width: 24.2px;
+        height: 14px;
+        left: 44px;
+        top: calc(50% - 14px/2);
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    .form-group1 > div {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 650px;
+        height: 51.5px;
+        left: 112px;
+        top: calc(50% - 51.5px/2);
+
+        border-bottom: 0.5px solid #E9E9E9;
+        background: #FFFFFF;
+
+    }
+
+    .form-group1 > div >label {
+        position: absolute;
+        width: 400px;
+        height: 24px;
+        left: 10px;
+        top: 14px;
+
+        background: #FFFFFF;
+    }
+
+    .form-group1 > div >label >span {
+        position: absolute;
+        width: 63.2px;
+        height: 14px;
+        left: 0px;
+        top: 1px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+    }
+
+    .form-group2 {
+        position: absolute;
+        width: 762px;
+        height: 57px;
+        left: 0px;
+        top: calc(50% - 57px/2 - 126.75px);
+
+    }
+
+    .form-group2 >label:nth-of-type(1) {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 112px;
+        height: 57px;
+        left: 0px;
+        top: calc(50% - 57px/2);
+
+        background: #F5F8F9;
+        border-bottom: 1px solid #E9E9E9;
+    }
+
+    .form-group2 >label:nth-of-type(1) >span {
+        position: absolute;
+        width: 24.2px;
+        height: 14px;
+        left: 44px;
+        top: calc(50% - 14px/2 - 0.5px);
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    .form-group2 > label:nth-of-type(2) {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 650px;
+        height: 57px;
+        left: 112px;
+        top: calc(50% - 57px/2);
+
+        background: #FFFFFF;
+
+        border: 1px solid #E9E9E9;
+    }
+
+
+    .form-group2 > label:nth-of-type(2) > span {
+        position: absolute;
+
+
+        left: 10px;
+        top: 12.5px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #111111;
+
+    }
+
+
+
+    .form-group3 {
+        position: absolute;
+        width: 762px;
+        height: 305px;
+        left: 0px;
+        top: calc(50% - 305px/2 + 54.25px);
+    }
+        
+    .form-group3 > label:nth-of-type(1) {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 112px;
+        height: 305px;
+        left: 0px;
+        top: calc(50% - 305px/2);
+
+        background: #F5F8F9;
+        border-bottom: 1px solid #E9E9E9;
+    }
+
+    .form-group3 > label:nth-of-type(1) >span {
+        position: absolute;
+        width: 24.2px;
+        height: 14px;
+        left: 44px;
+        top: calc(50% - 14px/2 - 0.5px);
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+
+    .form-group3 > label:nth-of-type(2) {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 650px;
+        height: 305px;
+        left: 112px;
+        top: calc(50% - 305px/2);
+
+        border-bottom: 1px solid #E9E9E9;
+        background: #FFFFFF;
+    }
+
+        
+        
+    .c_delete {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 42px;
+        height: 35px;
+        right: 90px;
+        top: 437px;
+
+        border: 1px solid #BEBEBE;
+        background: #FFFFFF;
+    }
+
+    .c_delete >span {
+        position: absolute;
+width: 24.2px;
+height: 14px;
+right: 8.8px;
+top: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #111111;
+    }
+
+    .c_modify {
+        box-sizing: border-box;
+
+position: absolute;
+width: 42px;
+height: 35px;
+right: 45px;
+top: 437px;
+
+border: 1px solid #BEBEBE;
+background: #FFFFFF;
+    }
+
+    .c_modify > span {
+        position: absolute;
+width: 24.2px;
+height: 14px;
+right: 8.8px;
+top: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #111111;
+    }
+
+    .c_menu {
+        box-sizing: border-box;
+
+position: absolute;
+width: 42px;
+height: 35px;
+right: 0px;
+top: 437px;
+
+border: 1px solid #BEBEBE;
+background: #FFFFFF;
+    }
+
+    .c_menu > span {
+        position: absolute;
+width: 24.2px;
+height: 14px;
+right: 8.8px;
+top: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #111111;
+    }
+    
+
+
+    .form-group4 {
+        box-sizing: border-box;
+
+position: absolute;
+height: 197px;
+left: 0px;
+right: 0px;
+top: 493px;
+
+background: #F9F9F9;
+border: 1px solid #E3E3E3;
+    }
+
+    .form-group4 > div:nth-of-type(1) {
+        box-sizing: border-box;
+
+position: absolute;
+height: 25px;
+left: 17px;
+right: 17px;
+top: 17px;
+
+border-bottom: 1px dashed #111111;
+
+    }
+
+    .form-group4 > div:nth-of-type(1)> span{
+        position: absolute;
+width: 52.2px;
+height: 15px;
+left: 0px;
+top: 1px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 13px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+    }
+
+    .form-group4 > div:nth-of-type(2) {
+        position: absolute;
+height: 71px;
+left: 17px;
+right: 17px;
+top: 52px;
+    }
+
+    .form-group4 > div:nth-of-type(2) > span:nth-of-type(1) {
+        position: absolute;
+width: 95.2px;
+height: 14px;
+left: 0px;
+top: 1px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10.6875px;
+line-height: 13px;
+display: flex;
+align-items: center;
+
+color: #000000;
+    }
+
+    .form-group4 > div:nth-of-type(2) > span:nth-of-type(2) {
+        position: absolute;
+
+left: 10px;
+top: 28px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+    }
+    .form-group4 > div:nth-of-type(2) > span:nth-of-type(3) {
+        position: absolute;
+width: 51.2px;
+height: 14px;
+left: 677px;
+top: 55px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #111111;
+    }
+
+    .form-group4  > span{
+        position: absolute;
+
+left: calc(50% - 129.2px/2 + 0.1px);
+top: 144px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+    }
+
+        
+    .form-group5 {
+        box-sizing: border-box;
+
+position: absolute;
+height: 178px;
+left: 0px;
+right: 0px;
+top: 700px;
+
+background: #F9F9F9;
+border: 1px solid #E3E3E3;
+    }
+
+    .form-group5 > form {
+        position: absolute;
+height: 64px;
+left: 17px;
+right: 17px;
+top: 52px;
+    }
+
+    .form-group5 > form >button:nth-of-type(1) {
+        box-sizing: border-box;
+
+position: absolute;
+width: 42px;
+height: 35px;
+left: 617px;
+top: 74px;
+
+border: 1px solid #BEBEBE;
+    }
+
+    .form-group5 > form >button:nth-of-type(1) > span {
+        position: absolute;
+width: 24.2px;
+height: 14px;
+left: 9px;
+top: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #111111;
+    }
+
+    .form-group5 > form >button:nth-of-type(2) {
+            
+        box-sizing: border-box;
+
+position: absolute;
+width: 66px;
+height: 35px;
+left: 662px;
+top: 74px;
+
+background: #4B545E;
+border: 1px solid #3B3C3F;
+    }
+
+    .form-group5 > form >button:nth-of-type(2) >span {
+        position: absolute;
+width: 48.2px;
+height: 14px;
+left: 9px;
+top: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+    }
+        
+    .form-group5 > form > textarea {
+        box-sizing: border-box;
+
+position: absolute;
+height: 60px;
+left: 0px;
+right: 0px;
+top: 0px;
+overflow: scroll;
+
+background: #FFFFFF;
+border: 1px solid #E4EAEC;
+
+    }
+
+    .form-group5 > div {
+        box-sizing: border-box;
+
+position: absolute;
+height: 25px;
+left: 17px;
+right: 17px;
+top: 17px;
+
+border-bottom: 1px dashed #111111;
+    }
+
+    .form-group5 > div > span {
+        position: absolute;
+        width: 52.2px;
+        height: 15px;
+        left: 0px;
+        top: 1px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+
+    }
+
+    button:hover {
+        
+        transform: scale(1.1);
+    }
+
+    button:active {
+        
+        transform: scale(0.95);
+    }
+
+
+
+
+
+    footer {
+        position: relative;
+        top: 360px;
+        width: 980px;
+        height: 120px;
+        margin: 0 auto;
+        border-top: 2px solid #C2C2C2; /*임의 설정값*/
+        box-sizing: border-box;
+    }
+    footer > img {
+        position: absolute;
+        top: 1px;
+    }
+    footer > div {
+        position: absolute;
+        width: 709.48px;
+        height: 71px;
+        top: 27px;
+        left: 254.52px;
+    }
+    footer > div > p {
+        font-weight: 400;
+    }
+    footer > div > .farmstory {
+        width: 100%;
+        height: 48px;
+        position: absolute;
+        top: 3px;
+        font-size: 10.31px;
+        line-height: 18px;
+        color: #585858;
+    }
+    footer > div > .copyright {
+        width: 272.5px;
+        height: 14px;
+        position: absolute;
+        top: 55px;
+        font-size: 11.06px;
+        line-height: 13.39px;
+        color: #888;
+    }
+    footer > div > .ver {
+        width: 89.18px;
+        height: 14px;
+        position: absolute;
+        top: 54px;
+        left: 620.5px;
+        font-size: 10.69px;
+        line-height: 12.93px;
+        color: #888;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="로고사진">
+        <img src="../images/head_txt_img.png" alt="무료배송">
+        <span class="home">
+            <a href="#">HOME</a>&thinsp;|&thinsp;
+            <a href="#">로그인</a>&thinsp;|&thinsp;
+            <a href="#">회원가입</a>&thinsp;|&thinsp;
+            <a href="#">나의정보</a>&thinsp;|&thinsp;
+            <a href="#">로그아웃</a>&thinsp;|&thinsp;
+            <a href="#">관리자</a>&thinsp;|&thinsp;
+            <a href="#">고객센터</a>
+        </span>
+        <nav>
+            <div class="nav_item">
+                <img src="../images/head_menu_line.png" alt="item">
+                <a href="#">팜스토리소개</a>
+            </div>
+            <div class="nav_item">
+                <img src="../images/head_menu_line.png" alt="item">
+                <a href="#">장보기</a>
+                <ul>
+                    <img src="../images/head_menu_badge.png" alt="item">
+                </ul>
+            </div>
+            <div class="nav_item">
+                <img src="../images/head_menu_line.png" alt="item">
+                <a href="#">농작물이야기</a>
+            </div>
+            <div class="nav_item">
+                <img src="../images/head_menu_line.png" alt="item">
+                <a href="#">이벤트</a>
+            </div>
+            <div class="nav_item">
+                <img src="../images/head_menu_line.png" alt="item">
+                <a href="#">커뮤니티</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main_top">
+            <img src="../images/sub_top_tit5.png" alt="community">
+        </div>
+        <section class="main_btm">
+            <aside>
+                <img src="../images/sub_aside_cate5_tit.png" alt="커뮤니티">
+                <img src="../images/sub_aside_bg_line.png" alt="목록선">
+                <div class="list">
+                        <ul>
+                            <li><a href="./notices.html">공지사항</a></li>
+                            <li><a href="./today-menu.html">오늘의식단</a></li>
+                            <li class="on"><a href="./recipe-sharing.html">나도요리사</a></li>
+                            <li><a href="./customer-inquiry.html">1:1고객문의</a></li>
+                            <li><a href="./faq.html">자주묻는질문</a></li>
+                        </ul>
+                </div>
+            </aside>
+            <article>
+                <section>
+                    <span>글보기</span>
+                    <form action="">
+                        
+                        <div class="form-group1">
+                            <label for="title"><span>제목</span></label>
+                            <div>
+                                <label for="title"><span>제목입니다.</span></label>
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group2">
+                            <label for="file"><span>파일</span></label>
+                            <label for="file"><span><a href="">2021년 상반기 매출현황.xls 7회 다운로드
+                                <br>교육 운영 관리자료.hwp 7회 다운로드</a></span>
+                            </label>
+                            
+                        </div>
+
+                        <div class="form-group3">
+                            <label><span>내용</span></label>
+                            <label></label>
+                        </div>
+
+                        <button type="button" class="c_delete"><span>삭제</span></button>
+                        <button type="button" class="c_modify"><span>수정</span></button>
+                        <button type="button" class="c_menu"><span>목록</span></button>
+                    </form>
+
+                    <div class="form-group4">
+                        <div>
+                            <span>댓글목록</span>
+                        </div>
+                        <div>
+                            <span>2024-05-20 길동이</span>
+                            <span>댓글 샘플 입니다.</span>
+                            <span><a href="">삭제 수정</a></span>
+                        </div>
+                        <span>등록된 댓글이 없습니다.</span>
+                    </div>
+
+                    <div class="form-group5">
+                        <form action="">
+                            <button>
+                                <span>취소</span>
+                            </button>
+                            <button>
+                                <span>작성완료</span>
+                            </button>
+                            <textarea name="" id=""></textarea>
+                        </form>
+
+                        <div>
+                            <span>댓글쓰기</span>
+                        </div>
+                        
+                    </div>
+
+                </section>
+                <nav>
+                    <img src="../images/sub_nav_tit_cate5_tit3.png" alt="나도요리사">
+                    <div>
+                        <ul>
+                            <img src="../images/sub_page_nav_ico.gif" alt="#">
+                        </ul>
+                        <a href="#"> HOME > </a>
+                        <a href="#">커뮤니티 > </a>
+                        <a href="#">나도요리사</a>
+                    </div>
+                </nav>
+                <div></div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <img src="../images/footer_logo.png">
+        <div>
+            <p class="farmstory">(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호</br>
+                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동</br>
+                대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
+            </p>
+            <p class="copyright">
+                copyrightⓒ 김철학(개발에반하다) All rights reserved.
+            </p>
+            <p class="ver">
+                farmstory ver1.0.1
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
