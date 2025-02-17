@@ -1,0 +1,50 @@
+홈페이지 소개 (home/about)
+
+greeting (인사말)
+directions 또는 location (찾아오시는 길)
+
+장보기 (shop)
+product-list (상품 목록)
+cart (장바구니)
+product-detail (상품 상세보기)
+checkout (주문하기)
+
+농작물이야기 (stories)
+farm-stories (농작물이야기)
+gardening (텃밭 가꾸기)
+farming-school (귀농학교)
+
+이벤트 (events)
+event-calendar (이벤트 캘린더)
+
+커뮤니티 (community)
+notices (공지사항)
+today-menu (오늘의 식단)
+recipe-sharing (나도 요리사)
+customer-inquiry (고객 문의)
+faq (자주 묻는 질문)
+
+사용자 (users)
+login (로그인)
+terms (이용약관)
+signup (회원가입)
+찾기 (search)
+
+find-id (아이디 찾기)
+find-id-result (아이디 찾기 결과)
+find-password (비밀번호 찾기)
+reset-password (비밀번호 변경)
+
+나의정보 (profile)
+order-history (주문 내역)
+update-info (정보 수정)
+cart (장바구니) – 중복되지만 필요에 따라 재사용 가능
+관리자 메인 (admin)
+
+dashboard (관리자 메인)
+
+관리자 상품 관리 (admin/products)
+product-list (상품 목록)
+add-product (상품 등록)
+order-list (주문 목록)
+user-list (회원 목록)
