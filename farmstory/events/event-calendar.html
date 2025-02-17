@@ -95,7 +95,7 @@
     }
     main > .main_btm {
         width: 100%;
-        height: 650px;
+        height: 900px;
     }
     main > .main_btm > aside {
         position: relative;
@@ -118,34 +118,214 @@
         position: absolute;
         width: 175px;
         height: 233px;
-        background-image: url("../images/sub_aside_bg_lnb.png");
+        background-image: url("/images/sub_aside_bg_lnb.png");
         top: 81px;
         right: 1px; /*임의 설정값*/
+        padding-top: 30px;
+        box-sizing: border-box;
     }
-    main aside .list li {
-        position: absolute;
+    main aside .list li {        
         width: 175px;
-        height: 26px;
+        height: 28px;
+        margin-bottom: 6px;
     }
-    /*====================*/
-    main aside .list li:nth-child(1) {background-image: url("../images/sub_cate4_lnb1_ov.png"); top: 26px;}
-    /*====================*/
+
+    
+    main aside .list li:nth-child(1).on > a {
+        background-image: url("/images/sub_cate4_lnb1.png");
+    } /*class="on" 이미지*/
+
+    main aside .list li:nth-child(1) > a:hover {
+        background-image: url("/images/sub_cate4_lnb1_ov.png");
+    }  /*hover 했을때 바뀔 배경 이미지*/
+
+
+    main aside .list li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+    }
+  
     main > .main_btm > article {
         position: relative;
         width: 802px;
         height: 100%;
         float: right;
-        background-color: lightyellow;
+        
     }
     main > .main_btm > article > nav {
-        position: absolute;
+        
         width: 762px;
         height: 72px;
         left: 40px;
         border-bottom: 1px solid #C2C2C2;
         box-sizing: border-box;
         margin-bottom: 20px;
+        margin-left: 30px;
     }
+
+    main > .main_btm > article > div {
+        
+        width: auto;
+        height: 600px;
+        box-sizing: border-box;
+        margin-left: 30px;
+    }
+
+    /*====================달력=============================*/
+    main > .main_btm > article > div > *{
+        position: relative;
+        margin : 0;
+        padding : 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+    
+    main > .main_btm > article > div > body{
+        display :flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .calendar {
+        width: 600px;
+        margin: 50px;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .year-month {
+        font-size: 35px;
+    }
+    
+    
+
+    .nav {
+        display: flex;
+        border: 1px solid #333333;
+    }
+    
+    .nav-btn {
+        width: 28px;
+        height: 30px;
+        border: none;
+        font-size: 16px;
+        background-color: transparent;
+        cursor : pointer;
+        
+    }
+
+
+    
+    
+   .go-today {
+        position: absolute;
+        width: 75px;
+        border: 1px solid #333333;
+        right: 70px;
+        
+    }
+    
+    .days {
+        display :flex;
+        margin: 25px 0 10px;
+    }
+    
+     .day {
+        width: calc(100% / 7);
+        text-align: center;
+    }
+    
+   .dates {
+        display: flex;
+        flex-flow: row wrap;
+        
+        height: 500px;
+        border-top: 1px solid #333333;
+        border-right: 1px solid #333333;
+    }
+    
+    .date {
+        width: calc(100% / 7);
+        padding: 15px;
+        text-align: right;
+        border-bottom: 1px solid #333333;
+        border-left:1px solid #333333;
+    }
+    
+    .day:nth-child(7n +1),
+    .date:nth-child(7n +1) {
+        color :red
+    }
+
+    .day:nth-child(7n),
+    .date:nth-child(7n) {
+        color: blue;
+    }
+
+    .other {
+        opacity: 0.3;
+    }
+
+    .today {
+        position: relative;
+        color : #ffffff
+    }
+
+    .today:before {
+        position : absolute;
+        top:50%;
+        left :50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 30px;
+        height: 30px;
+        display: block;
+        background-color: red;
+        border-radius: 50%;
+        content :'';
+        
+    }
+
+    /*=================================================*/
+
+    main > .main_btm > article > div > ul:nth-child(1) {
+
+        width: auto;
+        height: 100px;
+        box-sizing: border-box;
+    }
+    main > .main_btm > article > div > ul:nth-child(1) > li:nth-child(1) {
+        float: left;
+        width: 50%;
+        height: 120px;
+        border: 1px solid red;
+        box-sizing: border-box;
+   
+    }
+    main > .main_btm > article > div > ul:nth-child(1) > li:nth-child(2) {
+        float: left;
+        width: 50%;
+        height: 120px;
+        border: 1px solid yellow;
+        box-sizing: border-box;
+    
+    }
+
+    main > .main_btm > article > div > ul:nth-child(2) {
+        width: auto;
+        height: 500px;
+        border: 1px solid green;
+        box-sizing: border-box;
+
+    }
+
     main > .main_btm > article > nav > img {
         position: absolute;
         top: 41px;
@@ -223,7 +403,7 @@
 </style>
 </head>
 <body>
-    <header>
+   <header>
         <img src="../images/logo.png" alt="로고사진">
         <img src="../images/head_txt_img.png" alt="무료배송">
         <span class="home">
@@ -271,8 +451,7 @@
                 <img src="../images/sub_aside_bg_line.png" alt="목록선">
                 <div class="list">
                         <ul>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
+                            <li class="on"><a href="#">이벤트</a></li>
                         </ul>
                 </div>
             </aside>
@@ -284,11 +463,34 @@
                             <img src="../images/sub_page_nav_ico.gif" alt="#">
                         </ul>
                         <a href="#"> HOME > </a>
-                        <a href="#">팜스토리소개 > </a>
-                        <a href="#">인사말</a>
+                        <a href="#">이벤트 > </a>
+                        <a href="#">이벤트</a>
                     </div>
                 </nav>
-                <div></div>
+                <div class="calendar">
+                    <div class="header">
+                        <div class="year-month"></div>
+                        <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                        <div class="nav">
+                            
+                            <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                            <button class="nav-btn go-next" onclick="nextMonth()" style="border-left: 1px solid #333333;">&gt;</button>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <div class="days">
+                            <div class="day">Sun</div>
+                            <div class="day">Mon</div>
+                            <div class="day">Tue</div>
+                            <div class="day">Wed</div>
+                            <div class="day">Thu</div>
+                            <div class="day">Fri</div>
+                            <div class="day">Sat</div>
+                        </div>
+                        <div class="dates"></div>
+                    </div>
+                </div>
+                <script src="index.js"></script>
             </article>
         </section>
     </main>
