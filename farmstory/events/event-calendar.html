@@ -114,6 +114,7 @@
         top: 40px; /*임의 설정값*/
         right: 0px;
     }
+    
     main aside .list {
         position: absolute;
         width: 175px;
@@ -135,7 +136,7 @@
         width: 802px;
         height: 100%;
         float: right;
-        background-color: lightyellow;
+        
     }
     main > .main_btm > article > nav {
         position: absolute;
@@ -169,13 +170,151 @@
         font-weight: 400;
         color: #8C8C8C;
     }
+
+    /* ================== 달력 컨테이너 ================== */
+article > .calendar_container {
+    position: absolute;
+    width: 765px;
+    height: 631px;
+    top: 80px;
+    left: 38px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ====== 달력 헤더 (월/년 & 네비게이션 버튼) ====== */
+article > .calendar_container > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* 월/년 텍스트 스타일 */
+article > .calendar_container > .header > .month_year_wrapper {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 버튼 스타일 */
+article > .calendar_container > .header > .nav_button {
+    display: flex;
+    align-items: center;
+    
+}
+
+article > .calendar_container > .header > .nav_button > .btn_today {
+    margin-right: 15px; /* Today 버튼만 오른쪽 간격 추가 */
+    background-color: gray;
+    color : white;
+    padding: 4px 4px;
+    
+}
+
+
+article > .calendar_container > .header > .nav_button > .btn {
+    margin : 0;
+    background-color: black;
+    color : white;
+    padding : 6px 12px;
+    
+}
+
+
+
+/* ====== 달력 테이블 컨테이너 (요일 + 날짜 테이블 포함) ====== */
+article > .calendar_container > .calendar_table_container {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+/* ====== 달력 테이블 ====== */
+article > .calendar_container > .calendar_table_container > .calendar_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 요일 스타일 (thead 높이를 tbody의 1/4로 설정) */
+article > .calendar_container > .calendar_table_container > .calendar_table > thead > tr > th {
+    height: 15px; /* 요일 높이 */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    
+}
+
+/* 날짜 스타일 (tbody 높이) */
+article > .calendar_container > .calendar_table_container > .calendar_table > tbody > tr > td {
+    width: 14.28%;
+    height: 65px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    text-align: left;
+    padding: 5px;
+    position: relative;
+}
+
+/* 날짜 숫자를 오른쪽 위로 정렬 */
+article > .calendar_container > .calendar_table_container > .calendar_table > tbody > tr > td > .date-number {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 오늘 날짜 스타일 */
+.today {
+    background-color: yellow !important;
+}
+
+/* 공휴일 스타일 */
+.holiday {
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    border: 1px solid red; /* 빨간색 테두리 */
+    padding: 2px 25px; /* 안쪽 여백 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    display: inline-block;
+    font-size: 12px; /* 글자 크기 조정 */
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+/* 스케줄이 있는 날짜 칸 전체 스타일 */
+.schedule-cell {
+    background-color: #d0e8ff !important; /* 기존 lightblue보다 더 부드러운 블루 */
+    border: 1px solid #87CEEB; /* 연한 파란색 테두리 */
+}
+
+/* 스케줄이 있는 날짜 스타일 */
+.schedule {
+    background-color: #add8e6; /* 기존 lightblue보다 약간 진한 블루 계열 */
+    border: 1px solid #87CEEB; /* 파란색 테두리 추가 */
+    font-weight: bold;
+    color: #000080; /* 글씨 색 어두운 네이비 */
+    padding: 2px;
+    border-radius: 4px; /* 모서리 둥글게 */
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    margin-top: 5px;
+}
+
+   
+.gray-out {
+    color: lightgray !important;
+}
+
+
     footer {
         position: relative;
         width: 980px;
         height: 120px;
         margin: 0 auto;
-        background-color: bisque;
-        border-top: 2px solid #C2C2C2; /*임의 설정값*/
         box-sizing: border-box;
     }
     footer > img {
@@ -221,6 +360,11 @@
         color: #888;
     }
 </style>
+
+
+
+
+
 </head>
 <body>
     <header>
@@ -284,11 +428,49 @@
                             <img src="../images/sub_page_nav_ico.gif" alt="#">
                         </ul>
                         <a href="#"> HOME > </a>
-                        <a href="#">팜스토리소개 > </a>
-                        <a href="#">인사말</a>
+                        <a href="#">이벤트 > </a>
+                        <a href="#">이벤트</a>
                     </div>
                 </nav>
-                <div></div>
+
+                <!--달력-->
+                <div class="calendar_container">
+                    <div class="header">
+                        <div class="month_year_wrapper">
+                            <div class="month_year" id="monthYear"></div>
+                        </div>
+                        
+                        <div class="nav_button">
+                            <button class="btn_today" onclick="goToday()">Today</button>
+                            <button class="btn" onclick="prevMonth()">&lt;</button>
+                            <button class="btn" onclick="nextMonth()">&gt;</button>
+                        </div>
+                    </div>
+
+                   <!-- 달력 -->
+
+
+    <!-- 요일 & 날짜 테이블을 함께 포함하는 div -->
+    <div class="calendar_table_container">
+        <table class="calendar_table">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody"></tbody>
+        </table>
+    </div>
+</div>
+
+
+
             </article>
         </section>
     </main>
@@ -307,5 +489,163 @@
             </p>
         </div>
     </footer>
+
+
+    <script>
+
+            // ✅ 날짜를 YYYY-MM-DD 형식으로 변환하는 함수 (최상단에 추가)
+            function formatDate(year, month, day) {
+                return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            }
+
+            // 현재 날짜 객체 생성
+            let today = new Date();
+            let currentMonth = today.getMonth();
+            let currentYear = today.getFullYear();
+
+            // HTML 요소 가져오기
+            const monthYearText = document.getElementById("monthYear");
+            const calendarBody = document.getElementById("calendarBody");
+
+            // ✅ 공휴일 데이터 (YYYY-MM-DD 형식)
+            const holidays = {
+                "2025-01-28": "설날",
+                "2025-01-29": "설날",
+                "2025-01-30": "설날",
+                "2025-03-01": "삼일절"
+                
+            };
+
+            // 스케줄 저장 객체
+            let scheduleData = {};
+
+            // 달력 렌더링 함수
+            function renderCalendar(year, month) {
+                const monthNames = [
+                    "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+
+        // 월 & 연도 업데이트
+        monthYearText.innerText = `${monthNames[month]} ${year}`;
+
+        // 달력 초기화
+        calendarBody.innerHTML = "";
+
+        // 해당 월의 첫 번째 날짜와 마지막 날짜 계산
+        let firstDay = new Date(year, month, 1).getDay(); // 시작 요일 (0=일요일)
+        let lastDate = new Date(year, month + 1, 0).getDate(); // 현재 달의 마지막 날짜
+        let prevLastDate = new Date(year, month, 0).getDate(); // 지난달 마지막 날짜
+
+        let date = 1;
+        let nextMonthDate = 1;
+        let addedDays = 0; // 추가된 날짜 개수 (지난달 + 이번달 + 다음달)
+
+        for (let i = 0; i < 6; i++) {
+            let row = document.createElement("tr");
+
+            for (let j = 0; j < 7; j++) {
+                let cell = document.createElement("td");
+                let fullDate;
+
+                if (addedDays < firstDay) {
+                    // 지난달 날짜 추가
+                    let pastDate = prevLastDate - firstDay + j + 1;
+                    fullDate = formatDate(year, month, pastDate); // 지난달 날짜 변환
+                    cell.innerHTML = `<div class="date-number gray">${pastDate}</div>`;
+                    cell.classList.add("gray-out");
+                    addedDays++;
+                } else if (date > lastDate) {
+                    // 다음달 날짜 추가
+                    fullDate = formatDate(year, month + 2, nextMonthDate); // 다음달 날짜 변환
+                    cell.innerHTML = `<div class="date-number gray">${nextMonthDate}</div>`;
+                    cell.classList.add("gray-out");
+                    nextMonthDate++;
+                } else {
+                    // 이번달 날짜 추가
+                    fullDate = formatDate(year, month + 1, date); // 현재 날짜 변환
+
+                    let dateNum = document.createElement("div");
+                    dateNum.classList.add("date-number");
+                    dateNum.innerText = date;
+                    cell.appendChild(dateNum);
+
+                    // ✅ 오늘 날짜 강조
+                    if (year === today.getFullYear() && month === today.getMonth() && date === today.getDate()) {
+                        cell.classList.add("today");
+                    }
+
+                    // ✅ 공휴일 표시 (YYYY-MM-DD 형식으로 비교)
+                    if (holidays[fullDate]) {
+                        let holidayText = document.createElement("div");
+                        holidayText.classList.add("holiday");
+                        holidayText.innerText = holidays[fullDate];
+                        cell.appendChild(holidayText);
+                    }
+
+                    // ✅ 스케줄이 있는 경우 표시
+                    if (scheduleData[fullDate]) {
+                        let scheduleText = document.createElement("div");
+                        scheduleText.classList.add("schedule");
+                        scheduleText.innerText = scheduleData[fullDate];
+                        cell.appendChild(scheduleText);
+
+                        // ✅ 해당 날짜 칸에 `.schedule-cell` 클래스 추가
+                        cell.classList.add("schedule-cell");
+                    }
+
+                    // ✅ 날짜 클릭 시 스케줄 추가
+                    cell.onclick = function() {
+                        let eventTitle = prompt("스케줄 제목을 입력하세요:");
+                        if (eventTitle) {
+                            scheduleData[fullDate] = eventTitle;
+                            renderCalendar(currentYear, currentMonth);
+                        }
+                    };
+
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+    }
+}
+
+                // 오늘 날짜로 이동하는 함수
+                function goToday() {
+                    today = new Date();
+                    currentMonth = today.getMonth();
+                    currentYear = today.getFullYear();
+                    renderCalendar(currentYear, currentMonth);
+                }
+
+                // 이전 달 이동 함수
+                function prevMonth() {
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    renderCalendar(currentYear, currentMonth);
+                }
+
+                // 다음 달 이동 함수
+                function nextMonth() {
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    renderCalendar(currentYear, currentMonth);
+                }
+
+                // ✅ 초기 달력 렌더링
+                renderCalendar(currentYear, currentMonth);
+
+
+
+    </script>
+
+
 </body>
 </html>
