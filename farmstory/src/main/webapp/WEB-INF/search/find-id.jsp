@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<script src="/farmstory/js/search.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,6 +152,7 @@ header > .home {
 }
 
     div >  .btnCancel {
+    diplay: block;
     width: 42px;
     height: 35px;
     border: 1px solid #BEBEBE;
@@ -156,6 +160,7 @@ header > .home {
 }
 
     div >  .btnNext {
+    diplay: block;
     width: 42px;
     height: 35px;
     border: 1px solid #BEBEBE;
@@ -242,7 +247,7 @@ footer > .version {
             </header>
             <main id="find">
                 <section class="userId">
-                    <form action="#">
+                    <form action="/famrstory/search/userId.do">
                         <h2 class="tit">아이디 찾기</h2>
                         <table border="0">                        
                             <tr>
@@ -271,8 +276,8 @@ footer > .version {
                     </p>
     
                     <div>
-                        <button class="btnCancel">취소</button>
-                        <button class="btnNext">다음</button>
+                      	<a href="/farmstory/user/login.do" class="btn btnCancel">취소</a>
+                    	<a href="/farmstory/search/resultUserId.do" class="btn btnNext">다음</a>
                     </div>
                 </section>
             </main>

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,15 +149,15 @@ header > .home {
     margin-top: 10px;
 }
 
-    div >  .btnlogin {
-    width: 54px;
+    div >  .btnCancel {
+    width: 42px;
     height: 35px;
     border: 1px solid #BEBEBE;
     background-color: white;
 }
 
-    div >  .btnfind {
-    width: 93px;
+    div >  .btnNext {
+    width: 42px;
     height: 35px;
     border: 1px solid #BEBEBE;
     background-color: white;
@@ -240,41 +241,45 @@ footer > .version {
                     </div>
                 </nav>
             </header>
-            
             <main id="find">
-                <section class="resultUserId">
+                <section class="userId">
                     <form action="#">
-                        <h2 class="tit">아이디 찾기 결과</h2>
+                        <h2 class="tit">비밀번호 찾기</h2>
                         <table border="0">                        
                             <tr>
                                 <td>이름</td>
-                                <td>홍길동</td>
-                            </tr>
-                            <tr>
-                                <td>아이디</td>
-                                <td>honggildong</td>
+                                <td><input type="text" name="name" placeholder="이름 입력"/></td>
                             </tr>
                             <tr>
                                 <td>이메일</td>
-                                <td>honggildong@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>가입일</td>
-                                <td>2022-11-16 10:20</td>
-                            </tr>
+                                <td>
+                                    <div>
+                                        <input type="email" name="email" placeholder="이메일 입력"/>
+                                        <button type="button" class="btnAuth">인증번호 받기</button>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="auth" disabled placeholder="인증번호 입력"/>
+                                        <button type="button" class="btnConfirm">확인</button>
+                                    </div>
+                                </td>
+                            </tr>                        
                         </table>                                        
                     </form>
                     
                     <p>
-                        고객님의 정보와 일치하는 아이디 입니다.
+                        비밀번호를 찾고자 하는 아이디와 이메일을 입력해 주세요.<br>                    
+                        회원가입시 입력한 아이디와 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.<br>
+                        인증번호를 입력 후 확인 버튼을 누르세요.
                     </p>
     
+    
                     <div>
-                        <button class="btnlogin">로그인</button>
-                        <button class="btnfind">비밀번호 찾기</button>
+                        <button class="btnCancel">취소</button>
+                        <button class="btnNext">다음</button>
                     </div>
                 </section>
             </main>
+            
             <footer>
                 <img src="/farmstory/images/footer_top_line.png" alt="footer_line">
                 <img src="/farmstory/images/footer_logo.png" alt="footer_logo">
