@@ -19,8 +19,14 @@ public class LoginCotroller extends HttpServlet{
 	
 	private UserService service = UserService.INSTANCE;
 	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String result = req.getParameter("result");
+		
+		req.setAttribute("result", result);
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/users/login.jsp");
 		dispatcher.forward(req, resp);
 	} 
@@ -44,7 +50,7 @@ public class LoginCotroller extends HttpServlet{
 			resp.sendRedirect("/farmstory/main/main.do");
 			
 		}else {
-			resp.sendRedirect("/farmstory/user/login.do");
+			resp.sendRedirect("/farmstory/user/login.do?result=100");
 		}
 	}
 }

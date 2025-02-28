@@ -16,23 +16,25 @@ import kr.co.farmstory.dao.UserDAO;
 import kr.co.farmstory.dto.UserDTO;
 
 public enum UserService {
+	
 	INSTANCE;
+	
 	private UserDAO dao = UserDAO.getInstance();
 	
-	public void registerUser(UserDTO dto) {
+	public void registerUser(UserDTO dto) { // 회원가입
 		dao.insertUser(dto);
 	}
 	
-	public int countUser(String type, String value) {
-		return dao.selectCountUser(type, value); //count값 반환
+	public int countUser(String type, String value) { // 유효성
+		return dao.selectCountUser(type, value); 
 	}
 	
-	public UserDTO findUser(String uid) {
-		return dao.selectUser(uid);
-	}
-	
-	public UserDTO findUser(UserDTO dto) {
+	public UserDTO findUser(UserDTO dto) { // 로그인
 		return dao.selectUser(dto);
+	}
+	
+	public UserDTO searchUser(UserDTO dto) { // 아이디 찾기
+		return dao.searchUser(dto);
 	}
 	
 	public List<UserDTO> findAllUser() {
@@ -41,6 +43,7 @@ public enum UserService {
 	
 	public void modifyUser(UserDTO dto) {
 		dao.updateUser(dto);
+		
 	}
 	
 	public void deleteUser(String uid) {

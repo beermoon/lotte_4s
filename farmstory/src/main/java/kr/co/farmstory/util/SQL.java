@@ -27,4 +27,10 @@ public class SQL {
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
 	
+	public static final String SEARCH_USER = "SELECT `name`, `uid`, `email`, `regDate` "
+											+ "FROM `user` "
+											+ "WHERE `name`=? AND `email`=?";
+						
+			
+	
 }

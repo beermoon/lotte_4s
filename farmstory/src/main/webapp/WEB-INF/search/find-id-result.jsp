@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,28 +156,12 @@ header > .home {
     background-color: white;
 }
 
-    div >  .btnNext {
+    div >  .btnfind {
     width: 93px;
     height: 35px;
     border: 1px solid #BEBEBE;
     background-color: white;
 }
-
-
-div >  .btnCancel {
-    width: 42px;
-    height: 35px;
-    border: 1px solid #BEBEBE;
-    background-color: white;
-}
-
-    div >  .btnNext {
-    width: 42px;
-    height: 35px;
-    border: 1px solid #BEBEBE;
-    background-color: white;
-}
-
 
 
 footer {
@@ -258,37 +243,36 @@ footer > .version {
             </header>
             
             <main id="find">
-                <section class="changePassword">
+                <section class="resultUserId">
                     <form action="#">
-                        <h2 class="tit">비밀번호 변경</h2>
-                        <table border="0">
+                        <h2 class="tit">아이디 찾기 결과</h2>
+                        <table border="0">                        
+                            <tr>
+                                <td>이름</td>
+                                <td>홍길동</td>
+                            </tr>
                             <tr>
                                 <td>아이디</td>
                                 <td>honggildong</td>
                             </tr>
                             <tr>
-                                <td>새 비밀번호</td>
-                                <td>
-                                    <input type="email" name="pass1" placeholder="새 비밀번호 입력"/>
-                                </td>
+                                <td>이메일</td>
+                                <td>honggildong@gmail.com</td>
                             </tr>
                             <tr>
-                                <td>새 비밀번호 확인</td>
-                                <td>
-                                    <input type="email" name="pass1" placeholder="새 비밀번호 입력"/>
-                                </td>
+                                <td>가입일</td>
+                                <td>2022-11-16 10:20</td>
                             </tr>
                         </table>                                        
                     </form>
                     
                     <p>
-                        비밀번호를 변경해 주세요.<br>
-                        영문, 숫자, 특수문자를 사용하여 8자 이상 입력해 주세요.                    
+                        고객님의 정보와 일치하는 아이디 입니다.
                     </p>
     
                     <div>
-                        <button class="btnCancel">취소</button>
-                        <button class="btnNext">다음</button>
+                        <button class="btnlogin">로그인</button>
+                        <button class="btnfind">비밀번호 찾기</button>
                     </div>
                 </section>
             </main>
