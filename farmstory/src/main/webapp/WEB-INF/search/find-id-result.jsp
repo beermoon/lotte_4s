@@ -249,19 +249,19 @@ footer > .version {
                         <table border="0">                        
                             <tr>
                                 <td>이름</td>
-                                <td>홍길동</td>
+                                <td>${sessUser.name}</td>
                             </tr>
                             <tr>
                                 <td>아이디</td>
-                                <td>honggildong</td>
+                                <td>${sessUser.uid}</td>
                             </tr>
                             <tr>
                                 <td>이메일</td>
-                                <td>honggildong@gmail.com</td>
+                                <td>${sessUser.email}</td>
                             </tr>
                             <tr>
                                 <td>가입일</td>
-                                <td>2022-11-16 10:20</td>
+                                <td>${sessUser.regDate}</td>
                             </tr>
                         </table>                                        
                     </form>

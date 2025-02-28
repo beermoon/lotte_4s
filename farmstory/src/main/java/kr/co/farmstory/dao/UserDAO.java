@@ -38,31 +38,31 @@ public class UserDAO extends DBHelper{
 	public int  selectCountUser(String type, String value) {
 		int count = 0;
 		
-		// String 불변성을 고려해 StringBuilder로 동적 SQL 생성
 		StringBuilder sql = new StringBuilder(SQL.SELECT_COUNT_USER);
 		
-		if(type.equals("uid")) {sql.append(SQL.WHERE_UID);} // 아이디 중복체크 쿼리문
-		else if(type.equals("nick")) {sql.append(SQL.WHERE_NICK);} // 별명 중복체크 쿼리문
-		else if(type.equals("email")) {sql.append(SQL.WHERE_EMAIL);} // 이메일 중복체크 쿼리문
-		else if(type.equals("hp")) {sql.append(SQL.WHERE_HP);} // 휴대폰 중복체크 쿼리문
+		if(type.equals("uid")) {sql.append(SQL.WHERE_UID);} 
+		else if(type.equals("nick")) {sql.append(SQL.WHERE_NICK);} 
+		else if(type.equals("email")) {sql.append(SQL.WHERE_EMAIL);} 
+		else if(type.equals("hp")) {sql.append(SQL.WHERE_HP);} 
 		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
-			psmt.setString(1, value); // 아이디, 별명, 이메일, 휴대폰 value 값
+			psmt.setString(1, value); 
 			rs = psmt.executeQuery();
-			if(rs.next()) // value 데이터가 있으면
-				count = rs.getInt(1); // uid, nick, email, hp 의 count 값을 count에 저장 (1)
+			if(rs.next()) 
+				count = rs.getInt(1); 
 			closeAll();
 		}catch(Exception e) {logger.error(e.getMessage());}
-		return count; // 중복이면 1, 중복아니면 0 반환
+		return count;
 	}
 	
-	public UserDTO searchUser(UserDTO dto) {
+	public UserDTO selectUserId(UserDTO dto) { // 아이디 찾기
+		int count = 0;
 		UserDTO userDTO = null;
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SEARCH_USER);
+			psmt = conn.prepareStatement(SQL.SELECT_USER_UID);
 			psmt.setString(1, dto.getName());
 			psmt.setString(2, dto.getEmail());
 			rs = psmt.executeQuery();
@@ -78,6 +78,24 @@ public class UserDAO extends DBHelper{
 			logger.error(e.getMessage());
 		}
 		return userDTO;
+	}
+	
+	public String selectUserPass(UserDTO dto) { // 비밀번호 찾기
+		String uid = null;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_USER_UID);
+			psmt.setString(1, dto.getPass());
+			psmt.setString(2, dto.getEmail());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				uid = rs.getString(1);
+			}
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return uid;
 	}
 	
 	public UserDTO selectUser(UserDTO dto) {
