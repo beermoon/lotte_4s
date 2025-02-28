@@ -511,14 +511,14 @@
     <div id="wrapper">
         <header>
             <img src="/farmstory/images/head_top_line.png" alt="헤더 선">
-            <a href="/farmstory/main/main.html"><img src="/farmstory/images/logo.png" class="header_logo" alt="로고사진"></a>
+            <a href="/farmstory/main/main.do"><img src="/farmstory/images/logo.png" class="header_logo" alt="로고사진"></a>
             <img src="/farmstory/images/head_txt_img.png" alt="무료배송">
             <span class="home">
-                <a href="/farmstory//main/main.do">HOME</a>&thinsp;|&thinsp;
-                <a href="/farmstory//user/login.do">로그인</a>&thinsp;|&thinsp;
-                <a href="/farmstory//user/register.do">회원가입</a>&thinsp;|&thinsp;
-                <a href="/farmstory//profile/updateinfo.do">나의정보</a>&thinsp;|&thinsp;
-                <a href="/farmstory//user/logout.do">로그아웃</a>&thinsp;|&thinsp;
+                <a href="/farmstory/main/main.do">HOME</a>&thinsp;|&thinsp;
+                <a href="/farmstory/user/login.do">로그인</a>&thinsp;|&thinsp;
+                <a href="/farmstory/user/register.do">회원가입</a>&thinsp;|&thinsp;
+                <a href="/farmstory/profile/updateinfo.do">나의정보</a>&thinsp;|&thinsp;
+                <a href="/farmstory/user/logout.do">로그아웃</a>&thinsp;|&thinsp;
                 <a href="/farmstory/admin-dashboard/dashboard.do">관리자</a>&thinsp;|&thinsp;
                 <a href="#">고객센터</a>&thinsp;
             </span>

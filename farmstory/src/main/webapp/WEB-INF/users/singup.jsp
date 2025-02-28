@@ -196,7 +196,7 @@ footer > .version {
     <div id="wrapper">
           <header>
             <img src="/farmstory/images/head_top_line.png" alt="헤더 선">
-            <a href="/farmstory/main/main.html"><img src="/farmstory/images/logo.png" class="header_logo" alt="로고사진"></a>
+            <a href="/farmstory/main/main.do"><img src="/farmstory/images/logo.png" class="header_logo" alt="로고사진"></a>
             <img src="/farmstory/images/head_txt_img.png" alt="무료배송">
             <span class="home">
                 <a href="/farmstory//main/main.do">HOME</a>&thinsp;|&thinsp;
