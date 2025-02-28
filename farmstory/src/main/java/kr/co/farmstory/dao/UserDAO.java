@@ -102,7 +102,15 @@ public class UserDAO extends DBHelper{
 	}
 	
 	public void deleteUser(String uid) {
-		
+	    try {
+	        conn = getConnection();
+	        psmt = conn.prepareStatement(SQL.DELETE_USER);
+	        psmt.setString(1, uid);
+	        psmt.executeUpdate();
+	        closeAll();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 
 }

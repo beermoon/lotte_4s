@@ -11,6 +11,7 @@ public class SQL {
 	public static final String WHERE_NICK = "where `nick`=?";
 	public static final String WHERE_EMAIL = "where `email`=?";
 	public static final String WHERE_HP = "where `hp`=?";
+	public static final String DELETE_USER = "DELETE FROM users WHERE uid = ?";
 	
 	public static final String SELECT_USER = "select * from `user` where `uid`=? and `pass`=SHA2(?, 256)";
 	public static final String INSERT_USER = "insert into `user` set "
