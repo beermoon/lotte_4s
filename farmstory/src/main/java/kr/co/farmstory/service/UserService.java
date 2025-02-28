@@ -61,10 +61,10 @@ public enum UserService {
 		int code = ThreadLocalRandom.current().nextInt(100000, 1000000);
 		
 		// Gmail 기본정보
-		String sender = "sohyoun26@gmail.com";
+		String sender = "sjo112777@gmail.com";
 		String title = "jboard 인증코드 입니다.";
 		String content = "<h1>인증코드는 " + code + "입니다.</h1>";
-		String appPassword = "qxwh susp mpay neki";
+		String appPassword = "ixrp ntly zgft xkiv";
 		
 		// Gmail SMTP 서버 설정
 		Properties prop = new Properties();

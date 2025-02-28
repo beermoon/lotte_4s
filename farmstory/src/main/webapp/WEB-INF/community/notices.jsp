@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new_site</title>
+    <title>notice</title>
 
     <link rel="stylesheet" href="../css/_header.css">
     <link rel="stylesheet" href="../css/_footer.css">
@@ -53,7 +54,7 @@
         position: absolute;
         width: 175px;
         height: 233px;
-        background-image: url("/images/sub_aside_bg_lnb.png");
+        background-image: url("../images/sub_aside_bg_lnb.png");
         top: 81px;
         right: 1px; /*임의 설정값*/
         padding-top: 30px;
@@ -66,51 +67,51 @@
     }
     /*====================*/
     main aside .list li:nth-child(1).on > a {
-        background-image: url("/images/sub_cate5_lnb1.png");
+        background-image: url("../images/sub_cate5_lnb1.png");
     } /*class="on" 이미지*/
 
     main aside .list li:nth-child(1) > a:hover {
-        background-image: url("/images/sub_cate5_lnb1_ov.png");
+        background-image: url("../images/sub_cate5_lnb1_ov.png");
     }  /*hover 했을때 바뀔 배경 이미지*/
 
     main aside .list li:nth-child(2) > a 
-        {background-image: url("/images/sub_cate5_lnb2.png");
+        {background-image: url("../images/sub_cate5_lnb2.png");
     }
     main aside .list li:nth-child(2).on > a {
-        background-image: url("/images/sub_cate5_lnb2.png");
+        background-image: url("../images/sub_cate5_lnb2.png");
     } 
     main aside .list li:nth-child(2) > a:hover {
-        background-image: url("/images/sub_cate5_lnb2_ov.png");
+        background-image: url("../images/sub_cate5_lnb2_ov.png");
     }  
 
     main aside .list li:nth-child(3) > a 
-        {background-image: url("/images/sub_cate5_lnb3.png");
+        {background-image: url("../images/sub_cate5_lnb3.png");
     }
     main aside .list li:nth-child(3).on > a {
-        background-image: url("/images/sub_cate5_lnb3.png");
+        background-image: url("../images/sub_cate5_lnb3.png");
     } 
     main aside .list li:nth-child(3) > a:hover {
-        background-image: url("/images/sub_cate5_lnb3_ov.png");
+        background-image: url("../images/sub_cate5_lnb3_ov.png");
     }  
 
     main aside .list li:nth-child(4) > a 
-        {background-image: url("/images/sub_cate5_lnb4.png");
+        {background-image: url("../images/sub_cate5_lnb4.png");
     }
     main aside .list li:nth-child(4).on > a {
-        background-image: url("/images/sub_cate5_lnb4.png");
+        background-image: url("../images/sub_cate5_lnb4.png");
     } 
     main aside .list li:nth-child(4) > a:hover {
-        background-image: url("/images/sub_cate5_lnb4_ov.png");
+        background-image: url("../images/sub_cate5_lnb4_ov.png");
     }  
 
     main aside .list li:nth-child(5) > a 
-        {background-image: url("/images/sub_cate5_lnb5.png");
+        {background-image: url("../images/sub_cate5_lnb5.png");
     }
     main aside .list li:nth-child(5).on > a {
-        background-image: url("/images/sub_cate5_lnb5.png");
+        background-image: url("../images/sub_cate5_lnb5.png");
     } 
     main aside .list li:nth-child(5) > a:hover {
-        background-image: url("/images/sub_cate5_lnb5_ov.png");
+        background-image: url("../images/sub_cate5_lnb5_ov.png");
     }  
 
     /*====================*/
@@ -131,180 +132,147 @@
         
     }
 
-    main > .main_btm > article > div {
-        
-        width: auto;
-        height: 600px;
-        box-sizing: border-box;
-        margin-left: 30px;
-    }
     
-    main > .main_btm > article > nav:nth-child(1) {
-        
-        width: 762px;
-        height: 72px;
-        left: 40px;
-        border-bottom: 1px solid #C2C2C2;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-        margin-left: 30px;
     
-    }
-
-
-
-    main > .main_btm > article > div > li{
-        ;
-    }
-
-    main > .main_btm > article > div > ul:nth-child(1){
-        width: auto;
-        height: 50px;
-        box-sizing: border-box;
-       
-    }
-
-    main > .main_btm > article > div > ul:nth-child(1) > p{     
-        padding-top: 27px;
-        font-size:smaller;
-        font-weight: 550;
-        
-        
-    }
-    main > .main_btm > article > div > ul:nth-child(1) > li{
-        position: absolute;
-        right: 0px;
-        top:105px;
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(1) {
-        width: auto;
-        height: 60px;
-        background-color: #eee9e9;
-        box-sizing: border-box;
-        
-       
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(1) > li:nth-child(1) {
-        float: left;
-        width: 10%;
-        height: 60px;
-        
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(1) >li:nth-child(2) {
-        float: left;
-        width: 55%;
-        height: 60px;
-        
-    }
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(1) > li:nth-child(3) {
-        float: left;
-        width: 10%;
-        height: 60px;
     
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(1) >li:nth-child(4) {
-        float: left;
-        width: 15%;
-        height: 60px;
-    }
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(1) >li:nth-child(5) {
-        float: left;
-        width: 10%;
-        height: 60px;
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol > li >p {
-        margin-top: 17px;
-        text-align: center;
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol > li >p:nth-child(7) {
-        margin-top: 17px;
-        
-    }
-
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(2) {
-        width: auto;
-        height: 60px;
-        
-    }
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(2) > li:nth-child(1) {
-        float: left;
-        width: 10%;
-        height: 60px;
-        
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(2) >li:nth-child(2) {
-        float: left;
-        width: 55%;
-        height: 60px;
-
-        
-    }
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(2) > li:nth-child(3) {
-        float: left;
-        width: 10%;
-        height: 60px;
-        
     
-    }
-
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(2) >li:nth-child(4) {
-        float: left;
-        width: 15%;
-        height: 60px;
-    }
-    main > .main_btm > article > div > ul:nth-child(2) > ol:nth-child(2) >li:nth-child(5) {
-        float: left;
-        width: 10%;
-        height: 60px;
-    }
     
-    main > .main_btm > article > div > ul:nth-child(2){
-        width: auto;
-        height: 120px;
-        box-sizing: border-box;
-        border-top: 3px solid #585858;  
-    }
-   
-
     
-    main > .main_btm > article > div > ul:nth-child(3){
-        
-        width: auto;
-        height: 70px;
-        box-sizing: border-box;      
-        border-top:  2px solid #e0dfdf;
-    }
-
-    main > .main_btm > article > div > ul:nth-child(3) > li:nth-child(1){
-        float: left;
-        width: 70%;
-        height: 70px;
-        
-    }
-   
-    main > .main_btm > article > div > ul:nth-child(3) > li:nth-child(1) > ol:nth-child(1){
-        margin-top: 15px;
-        margin-left: 350px;    
-    }
-
-    main > .main_btm > article > div > ul:nth-child(3) > li:nth-child(2){
-        float: left; 
-        width: 30%;
-        height: 70px;     
-    }
     
-    main > .main_btm > article > div > ul:nth-child(3) > li:nth-child(2) > p {
-           margin-top: 15px;
-           margin-left: 180px;
-    }
+    
+    
+    
+    
+    
+    .list {
+    position: relative;
+    width: 100%;
+    height: auto;            
+    margin: 60px auto;    
+}
+
+.list > nav > form {
+    float: right;
+}
+
+.list > nav > form > input[name=keyword]{
+    width: 200px;
+    height: 26px;
+    text-indent: 6px;
+    border: 1px solid #d7d7d7;
+}
+.list > nav >form > input[type=submit]{
+    border: 1px solid #d7d7d7;
+    background: #f2f2f2; 
+    color: #111;
+    padding: 6px;
+}
+
+.list > table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 2px solid #111;
+}
+.list > table tr {}
+.list > table > caption {
+    text-align: left;
+    margin-bottom: 6px;
+}
+.list > table tr > th {
+    width: auto;
+    height: 40px;
+    background: #e5ecef;
+    border-bottom: 1px solid #d1dee2;
+}
+.list > table tr > td {
+    width: auto;
+    height: 40px;
+    border-bottom: 1px solid #e9e9e9;
+    text-align: center;
+}
+.list > table tr > td:nth-child(1) {}
+.list > table tr > td:nth-child(2) {text-align: left;}
+.list > table tr > td:nth-child(3) {}
+.list > table tr > td:nth-child(4) {}
+.list > table tr > td:nth-child(5) {}
+
+.list > .page {
+    text-align: center;
+    margin-top: 10px;
+}
+.list > .page > a {
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #d7d7d7;
+    background: #f2f2f2;
+}
+.list > .page > .prev {}
+.list > .page > .next {}
+.list > .page > .num {}
+.list > .page > .current {
+    border: 1px solid #6d6d6d;
+    background: #888;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px;    
+    border: 1px solid #bebebe; 
+    text-align: center;    
+    cursor: pointer;
+}
+
+.btnRegister {}
+.btnWrite {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #3b3c3f; 
+    background: #4b545e; 
+    color: #fff;
+}
+
+.btnComplete {
+    border: 1px solid #3b3c3f; 
+    background: #4b545e; 
+    color: #fff;
+}
+
+.btnAuth, .btnConfirm {
+    display: inline-block;
+    padding: 4px;    
+    border: 1px solid #bebebe; 
+    text-align: center;
+}
+
+
+.btnUpdatePass {
+    padding: 5px; background: #2e658a; color:#fff; border: 1px solid #bebebe; 
+}
+.btnWithdraw {
+    padding: 5px; background: #ed2f2f; color:#fff;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    
 
     main > .main_btm > article > nav > img {
@@ -411,48 +379,52 @@
                             <a href="#">공지사항</a>
                         </div>
                     </nav>
-                   <div>
-                        <ul>
-                            <p>글목록</p>
-                            <li>
-                                <label> <input type="search" placeholder=" 제목 키워드, 글쓴이 검색" size="25;" style="height: 27px;"></label>
-                                <input class="" type="button" value="검색" onclick="" style="width: 45px; height: 30px;">
-                            </li>
-                            
-                        </ul>
-                        <ul>
-                            <ol>
-                                <li><p>번호</p></li>
-                                <li><p>제목</p></li>
-                                <li><p>글쓴이</p></li>
-                                <li><p>날짜</p></li>
-                                <li><p>조회</p></li>
-                            </ol>
-                            <ol>
-                                <li><p>1</p></li>
-                                <li><p>공지사항 게시물입니다.[3]</p></li>
-                                <li><p>길동이</p></li>
-                                <li><p>20-05-12</p></li>
-                                <li><p>12</p></li>
-                            </ol>
-                        </ul>
-                        <ul>
-                            <li>
-                                <ol>
-                                <input type="button" value="이전" onclick="" style="width: 44px; height: 40px;">
-                                <input type="button" value="1" onclick="" style="width: 26px; height: 40px;">
-                                <input type="button" value="2" onclick="" style="width: 26px; height: 40px;">
-                                <input type="button" value="3" onclick="" style="width: 26px; height: 40px;">
-                                <input type="button" value="다음" onclick="" style="width: 44px; height: 40px;">
-                                </ol>
-                            </li>
-                            <li>
-                                <p>
-                                 <input type="button" value="글쓰기" onclick="" style="width: 55px; height: 40px; color: aliceblue; background-color: #585858;" >
-                                <p>    
-                            </li>
-                        </ul>
-                   </div>
+                   	<section class="list">
+		                <nav>
+		                    <h1>글목록</h1>
+		                    <form action="/farmstory/community/search.do">
+		                    	<select name="searchType" style="padding: 6px;">
+		                    		<option value="title">제목</option>
+		                    		<option value="content">내용</option>
+		                    		<option value="writer">글쓴이</option>
+		                    	</select>
+		                        <input type="text" name="keyword" placeholder="검색 키워드 입력">
+		                        <input type="submit" value="검색">
+		                    </form>
+		                </nav>
+	                                
+	                <table border="0">                    
+	                    <tr>
+	                        <th>번호</th>
+	                        <th>제목</th>
+	                        <th>글쓴이</th>
+	                        <th>날짜</th>
+	                        <th>조회</th>
+	                    </tr>
+	                    <c:forEach var="community" items="${requestScope.communitys}">
+		                    <tr>
+		                        <td>${pageStartNum}</td>
+		                        <td><a href="/farmstory/community/todaymenu.do?no=${community.no}">${community.title}[${community.comment}]</a></td>
+		                        <td>${article.nick}</td>
+		                        <td>${article.wdate}</td>
+		                        <td>${article.hit}</td>
+		                    </tr>
+		                    <c:set var="pageStartNum" value="${pageStartNum - 1}" />
+	                    </c:forEach>
+	                </table>
+	                <div class="page">
+	                	<c:if test="${pageGroupDTO.start > 1}">
+	                    	<a href="/farmstory/community/notices.do?pg=${pageGroupDTO.start - 1}" class="prev">이전</a>
+	                    </c:if>
+	                    <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end}">
+	                    	<a href="/farmstory/community/notices.do?pg=${num}" class="num ${currentPage == num ? 'current':''}">${num}</a>
+	                    </c:forEach>
+	                    <c:if test="${pageGroupDTO.end < lastPageNum}">
+	                    	<a href="/farmstory/community/notices.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>
+	                    </c:if>
+	                </div>
+               		<a href="/farmstory/community/todaymenu.do" class="btn btnWrite">글쓰기</a>                
+            	</section>
                 </article>
             </section>
         </main>
