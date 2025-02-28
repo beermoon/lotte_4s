@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>찾아오시는길</title>
 
-    <link rel="stylesheet" href="/farmstory/css/_header.css">
-    <link rel="stylesheet" href="/farmstory/css/_footer.css">
+    <link rel="stylesheet" href="../css/_header.css">
+    <link rel="stylesheet" href="../css/_footer.css">
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_API_KEY"></script>
 
@@ -37,7 +38,7 @@
         position: relative;
         width: 100%; 
         height: 184px;
-        background-image: url("/farmstory/images/sub_top_bg.jpg");
+        background-image: url("../images/sub_top_bg.jpg");
     }
 
     main > .main_top > img {
@@ -76,7 +77,7 @@
         right: 2px;
         width: 175px;
         height: 233px;
-        background-image: url("/farmstory/images/sub_aside_bg_lnb.png");
+        background-image: url("../images/sub_aside_bg_lnb.png");
     }
 
     main aside .list > a > img {
@@ -87,7 +88,7 @@
 
     main aside .list > a:nth-child(1) > img {margin-top: 26px;}
 
-    main .list > a:nth-child(1) > img:hover {background-image:url("/farmstory/images/sub_cate1_lnb1_ov.png");}
+    main .list > a:nth-child(1) > img:hover {background-image:url("../images/sub_cate1_lnb1_ov.png");}
 
     main > .main_btm > article {
         position: relative;
@@ -143,61 +144,61 @@
 <body>
     <div id="wrapper">
         <header>
-            <img src="/farmstory/images/head_top_line.png" alt="헤더 선">
-            <a href="/farmstory/main/main.html"><img src="/farmstory/images/logo.png" class="header_logo" alt="로고사진"></a>
-            <img src="/farmstory/images/head_txt_img.png" alt="무료배송">
+            <img src="../images/head_top_line.png" alt="헤더 선">
+            <a href="../main/main.html"><img src="../images/logo.png" class="header_logo" alt="로고사진"></a>
+            <img src="../images/head_txt_img.png" alt="무료배송">
             <span class="home">
-                <a href="/farmstory/main/main.html">HOME</a>&thinsp;|&thinsp;
-                <a href="/farmstory/users/login.html">로그인</a>&thinsp;|&thinsp;
-                <a href="/farmstory/users/singup.html">회원가입</a>&thinsp;|&thinsp;
-                <a href="/farmstory/profile/cart.html">나의정보</a>&thinsp;|&thinsp;
-                <a href="/farmstory/main/main.html">로그아웃</a>&thinsp;|&thinsp;
-                <a href="/farmstory/admin-dashboard/dashboard.html">관리자</a>&thinsp;|&thinsp;
+                <a href="../main/main.html">HOME</a>&thinsp;|&thinsp;
+                <a href="../users/login.html">로그인</a>&thinsp;|&thinsp;
+                <a href="../users/singup.html">회원가입</a>&thinsp;|&thinsp;
+                <a href="../profile/cart.html">나의정보</a>&thinsp;|&thinsp;
+                <a href="../main/main.html">로그아웃</a>&thinsp;|&thinsp;
+                <a href="../admin-dashboard/dashboard.html">관리자</a>&thinsp;|&thinsp;
                 <a href="#">고객센터</a>&thinsp;
             </span>
             <nav class="menu">
                 <div>
-                    <img src="/farmstory/images/head_menu_line.png" class="line" alt="메뉴 선">
-                    <a href="/farmstory/home/greeting.html"><img src="/farmstory/images/head_menu1.png" alt="팜스토리 소개"></a>
+                    <img src="../images/head_menu_line.png" class="line" alt="메뉴 선">
+                    <a href="../home/greeting.html"><img src="../images/head_menu1.png" alt="팜스토리 소개"></a>
                 </div>
                 <div>
-                    <img src="/farmstory/images/head_menu_line.png" class="line" alt="메뉴 선">
-                    <img src="/farmstory/images/head_menu_badge.png" alt="30%">
-                    <a href="/farmstory/shop/product-list.html"><img src="/farmstory/images/head_menu2.png" alt="장보기"></a>
+                    <img src="../images/head_menu_line.png" class="line" alt="메뉴 선">
+                    <img src="../images/head_menu_badge.png" alt="30%">
+                    <a href="../shop/product-list.html"><img src="../images/head_menu2.png" alt="장보기"></a>
                 </div>
                 <div>
-                    <img src="/farmstory/images/head_menu_line.png" class="line" alt="메뉴 선">
-                    <a href="/stories/farm-stories.html"><img src="/farmstory/images/head_menu3.png" alt="농작물이야기"></a>
+                    <img src="../images/head_menu_line.png" class="line" alt="메뉴 선">
+                    <a href="/stories/farm-stories.html"><img src="../images/head_menu3.png" alt="농작물이야기"></a>
                 </div>
                 <div>
-                    <img src="/farmstory/images/head_menu_line.png" class="line" alt="메뉴 선">
-                    <a href="/farmstory/events/event-calendar.html"><img src="/farmstory/images/head_menu4.png" alt="이벤트"></a>
+                    <img src="../images/head_menu_line.png" class="line" alt="메뉴 선">
+                    <a href="../events/event-calendar.html"><img src="../images/head_menu4.png" alt="이벤트"></a>
                 </div>
                 <div>
-                    <img src="/farmstory/images/head_menu_line.png" class="line" alt="메뉴 선">
-                    <a href="/farmstory/community/notices.html"><img src="/farmstory/images/head_menu5.png" alt="커뮤니티"></a>
+                    <img src="../images/head_menu_line.png" class="line" alt="메뉴 선">
+                    <a href="../community/notices.html"><img src="../images/head_menu5.png" alt="커뮤니티"></a>
                 </div>
             </nav>
         </header>
 
         <main>
             <section class="main_top">
-                <img src="/farmstory/images/sub_top_tit1.png" alt="introduction">
+                <img src="../images/sub_top_tit1.png" alt="introduction">
             </section>
             <section class="main_btm">
                 <aside>
-                    <img src="/farmstory/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
-                    <img src="/farmstory/images/sub_aside_bg_line.png" alt="목록선">
+                    <img src="../images/sub_aside_cate1_tit.png" alt="팜스토리소개">
+                    <img src="../images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list">
-                        <a href="/farmstory/home/greeting.html"><img src="/farmstory/images/sub_cate1_lnb1.png" alt="인사말"></a>
-                        <a href="/farmstory/home/directions.html"><img src="/farmstory/images/sub_cate1_lnb2_ov.png" alt="찾아오시는길"></a>
+                        <a href="../home/greeting.html"><img src="../images/sub_cate1_lnb1.png" alt="인사말"></a>
+                        <a href="../home/directions.html"><img src="../images/sub_cate1_lnb2_ov.png" alt="찾아오시는길"></a>
                     </div>
                 </aside>
                 <article>
                     <nav>
-                        <img src="/farmstory/images/sub_nav_tit_cate1_tit2.png" alt="찾아오시는길">
+                        <img src="../images/sub_nav_tit_cate1_tit2.png" alt="찾아오시는길">
                         <div class="nav_menu">
-                            <img src="/farmstory/images/sub_page_nav_ico.gif" alt="#">
+                            <img src="../images/sub_page_nav_ico.gif" alt="#">
                             <p>HOME > 팜스토리소개 > <span>찾아오시는길</span></p>
                         </div>
                     </nav>
@@ -214,8 +215,8 @@
             </section>
         </main>
         <footer>
-            <img src="/farmstory/images/footer_top_line.png" alt="footer_line">
-            <img src="/farmstory/images/footer_logo.png" alt="footer_logo">
+            <img src="../images/footer_top_line.png" alt="footer_line">
+            <img src="../images/footer_logo.png" alt="footer_logo">
             <p class="paragraph">
                 (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호</br>
                 등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동</br>
