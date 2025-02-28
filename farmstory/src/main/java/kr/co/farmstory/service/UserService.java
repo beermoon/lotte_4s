@@ -33,8 +33,12 @@ public enum UserService {
 		return dao.selectUser(dto);
 	}
 	
-	public UserDTO searchUser(UserDTO dto) { // 아이디 찾기
-		return dao.searchUser(dto);
+	public UserDTO findUserId(UserDTO dto) { // 아이디 찾기
+		return dao.selectUserId(dto);
+	}
+	
+	public String findUserPass(UserDTO dto) { // 비밀번호 찾기
+		return dao.selectUserPass(dto);
 	}
 	
 	public List<UserDTO> findAllUser() {

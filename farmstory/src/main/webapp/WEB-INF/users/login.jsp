@@ -354,8 +354,8 @@ footer > .version {
                             아직 회원이 아니시면 회원으로 가입하세요.
                         </p>
                         <div style="text-align: right;">
-                            <a href="/farmstory/find/userId.do">아이디 |</a>
-                            <a href="/farmstory/find/password.do">비밀번호찾기 |</a>
+                            <a href="/farmstory/search/userId.do">아이디 |</a>
+                            <a href="/farmstory/search/password.do">비밀번호찾기 |</a>
                             <a href="/farmstory/user/terms.do">회원가입</a>
                         </div>                    
                     </div>

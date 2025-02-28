@@ -27,9 +27,11 @@ public class SQL {
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
 	
-	public static final String SEARCH_USER = "SELECT `name`, `uid`, `email`, `regDate` "
-											+ "FROM `user` "
-											+ "WHERE `name`=? AND `email`=?";
+	public static final String SELECT_USER_UID = "SELECT `name`, `uid`, `email`, `regDate` "
+												+ "FROM `user` "
+												+ "WHERE `name`=? AND `email`=?";
+	
+	public static final String SELECT_USER_PASS = "SELECT `uid` FROM `user` WHERE `pass`=SHA2(?,256) AND `email`=?";
 						
 			
 	

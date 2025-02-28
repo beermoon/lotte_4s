@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<script src="/farmstory/js/search.js"></script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,10 +201,87 @@ footer > .version {
     font-size: 10.69px;
     color: #888;
 }
-    </style>
+</style>
 </head>
-<body>
-    <body>
+
+	<script>
+		document.addEventListener ('DOMContentLoaded', function(){
+			let isAuthOk = false;
+			let preventDoubleClick = false; 
+		    const next = document.querySelector('.btnNext');
+		    const cancel = document.querySelector('.btnCancel');
+		    
+			next.onclick = function(){
+				
+				const name = formRegister.name.value;
+				const email = formRegister.email.value;
+				const auth = formRegister.auth.value;
+			
+				if(uid == ''){
+					alert('아이디를 입력하세요.');
+					return false;
+				}else if (email == ''){
+					alert('이메일을 입력하세요.');
+					return false;
+				}else if(auth == ''){
+					alert('인증번호를 입력하세요.');
+					return false;
+				}else if (!isAuthOk) {
+	                alert('이메일 인증을 완료하세요.');
+	                return false; 
+	            }			
+			}
+			
+			const btnAuth = document.getElementsByClassName('btnAuth')[0];
+			const emailResult = document.querySelector('.emailResult');
+			
+			btnAuth.onclick = async function(){
+				
+				const name = formRegister.name.value;
+				const email = formRegister.email.value;
+				
+				if(preventDoubleClick){
+					return;
+				}
+				
+				preventDoubleClick = true;
+				const response = await fetch('/farmstory/search/userId.do?name=' + name + '&email=' + email);
+				const data = await response.json();
+			}
+			
+			const btnConfirm = document.getElementsByClassName('btnConfirm')[0];
+			
+			btnConfirm.onclick = async function(){
+				
+				const auth = formRegister.auth.value;
+				
+				const formData = new URLSearchParams(); 
+				formData.append("authCode", auth);
+				
+				const response = await fetch('/farmstory/search/userId.do', {
+												method: 'POST',
+												headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+												body: formData
+											});
+				
+				const data = await response.json();
+				
+				if(data.result>0){
+					emailResult.innerText = '이메일이 인증 되었습니다.';
+					emailResult.style.color = 'green';
+					isAuthOk = true;
+				}else {
+					emailResult.innerText = '유효한 인증코드가 아닙니다.';
+					emailResult.style.color = 'red';
+					isAuthOk = false;
+				}	
+				
+			}
+			
+		});
+	</script>
+	
+	<body>
         <div id="wrapper">
             <header>
                 <img src="/farmstory/images/head_top_line.png" alt="헤더 선">
@@ -247,7 +322,7 @@ footer > .version {
             </header>
             <main id="find">
                 <section class="userId">
-                    <form action="/famrstory/search/userId.do">
+                    <form action="/famrstory/search/userId.do" name="formRegister" method="post">
                         <h2 class="tit">아이디 찾기</h2>
                         <table border="0">                        
                             <tr>
@@ -260,9 +335,10 @@ footer > .version {
                                     <div>
                                         <input type="email" name="email" placeholder="이메일 입력"/>
                                         <button type="button" class="btnAuth">인증번호 받기</button>
+                                        <span class="emailResult"></span>
                                     </div>
                                     <div>
-                                        <input type="text" name="auth" disabled placeholder="인증번호 입력"/>
+                                        <input type="text" name="auth" placeholder="인증번호 입력"/>
                                         <button type="button" class="btnConfirm">확인</button>
                                     </div>
                                 </td>
