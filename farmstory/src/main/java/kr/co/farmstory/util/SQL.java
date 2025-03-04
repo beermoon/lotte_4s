@@ -69,6 +69,7 @@ public class SQL {
 																
 		
 		public static final String INSERT_COMMUNITY = "insert into `Community` set "
+														+ "`cate`=?,"
 														+ "`title`=?,"
 														+ "`content`=?,"
 														+ "`file`=?,"
@@ -109,7 +110,7 @@ public class SQL {
 		public final static String SELECT_FILE_BY_FNO = "select * from `file` where `fno`=?";
 		public final static String UPDATE_FILE_DOWNLOAD_COUNT = "UPDATE `file` SET `download` = `download` + 1 WHERE `fno`=?";
 		
-	}
+	
 
 	public static final String SELECT_USER_UID = "SELECT `name`, `uid`, `email`, `regDate` "
 												+ "FROM `user` "
@@ -119,5 +120,5 @@ public class SQL {
 						
 
 			
-	
+}
 
