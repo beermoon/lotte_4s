@@ -75,6 +75,7 @@ public class SQL {
 																
 		
 		public static final String INSERT_COMMUNITY = "insert into `Community` set "
+														+ "`cate`=?,"
 														+ "`title`=?,"
 														+ "`content`=?,"
 														+ "`file`=?,"
@@ -121,5 +122,5 @@ public class SQL {
 						
 }
 			
-	
+}
 

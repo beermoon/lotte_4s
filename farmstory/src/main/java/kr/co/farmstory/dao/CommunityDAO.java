@@ -26,11 +26,12 @@ public class CommunityDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_COMMUNITY);
-			psmt.setString(1, dto.getTitle());
-			psmt.setString(2, dto.getContent());
-			psmt.setInt(3, dto.getFile());
-			psmt.setString(4, dto.getWriter());
-			psmt.setString(5, dto.getRegip());
+			psmt.setString(1,dto.getCate());
+			psmt.setString(2, dto.getTitle());
+			psmt.setString(3, dto.getContent());
+			psmt.setInt(4, dto.getFile());
+			psmt.setString(5, dto.getWriter());
+			psmt.setString(6, dto.getRegip());
 			psmt.executeUpdate();
 			
 			// 글 번호 조회 쿼리 실행
