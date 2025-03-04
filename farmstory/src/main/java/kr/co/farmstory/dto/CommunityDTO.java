@@ -15,6 +15,7 @@ public class CommunityDTO {
 	private String regip;
 	private String wdate;
 	
+	
 	// 추가필드
 		private String nick;
 		

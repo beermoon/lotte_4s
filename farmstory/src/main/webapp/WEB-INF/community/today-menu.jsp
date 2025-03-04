@@ -485,11 +485,13 @@
                     <img src="../images/sub_aside_cate5_tit.png" alt="커뮤니티">
                     <img src="../images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list"> <!--수정-->
+                    <form action="/farmstory/community/today-menu.do" method="post">
                         <a href="../community/notices.html"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
-                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2_ov.png" alt="오늘의식단"></a>
+                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2_ov.png" alt="오늘의식단" value="오늘의 식단 "></a>
                         <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사"></a>
                         <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
                         <a href="../community/faq.html"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
+                        </form>
                     </div>
                 </aside>
                 <article>
@@ -502,9 +504,11 @@
                     </nav>
                     <section>
                         <span>글쓰기</span>
-                        <form action="">
+                        <form action="/farmstory/community/today-menu.do" method="post">
                             <button type="submit" class="submit"><span>작성완료</span></button>
                             <button type="button" class="cancle"><span>취소</span></button>
+                          
+                            
                             <div class="form-group1">
                                 <label for="title"><span>제목</span></label>
                                 <input type="text" id="title" name="title" placeholder="제목을 입력하세요.">
