@@ -5,133 +5,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notice</title>
+    <title>커뮤니티-공지사항</title>
 
     <link rel="stylesheet" href="../css/_header.css">
     <link rel="stylesheet" href="../css/_footer.css">
 
   <style>
-    main {
-        width: 980px;
-        height: auto;
+     main {
+        width: 100%;
+        height: auto; /*수정*/
         margin: 0 auto;
     }
 
-    
     main > .main_top {
+        position: relative;
         width: 100%;
         height: 184px;
         background-image: url("../images/sub_top_bg.jpg");
-        position: relative;
     }
+
     main > .main_top > img {
         position: absolute;
         top: 137px;
         left: 10px;
     }
+
     main > .main_btm {
         width: 100%;
-        height: 650px;
+        height: auto;
+        display: flex;
     }
+
     main > .main_btm > aside {
         position: relative;
-        float: left;
         width: 176px;
-        height: 100%;
-        /*그림자*/
+        height: 650px;
     }
+
     main > .main_btm > aside > img:nth-child(1) {
         position: absolute;
         top: 16px;
         left: 16px;
     }
+
     main > .main_btm > aside > img:nth-child(2) {
         position: absolute;
-        top: 40px; /*임의 설정값*/
+        top: 40px;
         right: 0px;
     }
+
     main aside .list {
         position: absolute;
+        top: 81px;
+        right: 2px;
         width: 175px;
         height: 233px;
         background-image: url("../images/sub_aside_bg_lnb.png");
-        top: 81px;
-        right: 1px; /*임의 설정값*/
-        padding-top: 30px;
-        box-sizing: border-box;
     }
-    main aside .list li {        
+
+    main aside .list > a > img {
         width: 175px;
-        height: 28px;
-        margin-bottom: 6px;
-    }
-    /*====================*/
-    main aside .list li:nth-child(1).on > a {
-        background-image: url("../images/sub_cate5_lnb1.png");
-    } /*class="on" 이미지*/
-
-    main aside .list li:nth-child(1) > a:hover {
-        background-image: url("../images/sub_cate5_lnb1_ov.png");
-    }  /*hover 했을때 바뀔 배경 이미지*/
-
-    main aside .list li:nth-child(2) > a 
-        {background-image: url("../images/sub_cate5_lnb2.png");
-    }
-    main aside .list li:nth-child(2).on > a {
-        background-image: url("../images/sub_cate5_lnb2.png");
-    } 
-    main aside .list li:nth-child(2) > a:hover {
-        background-image: url("../images/sub_cate5_lnb2_ov.png");
-    }  
-
-    main aside .list li:nth-child(3) > a 
-        {background-image: url("../images/sub_cate5_lnb3.png");
-    }
-    main aside .list li:nth-child(3).on > a {
-        background-image: url("../images/sub_cate5_lnb3.png");
-    } 
-    main aside .list li:nth-child(3) > a:hover {
-        background-image: url("../images/sub_cate5_lnb3_ov.png");
-    }  
-
-    main aside .list li:nth-child(4) > a 
-        {background-image: url("../images/sub_cate5_lnb4.png");
-    }
-    main aside .list li:nth-child(4).on > a {
-        background-image: url("../images/sub_cate5_lnb4.png");
-    } 
-    main aside .list li:nth-child(4) > a:hover {
-        background-image: url("../images/sub_cate5_lnb4_ov.png");
-    }  
-
-    main aside .list li:nth-child(5) > a 
-        {background-image: url("../images/sub_cate5_lnb5.png");
-    }
-    main aside .list li:nth-child(5).on > a {
-        background-image: url("../images/sub_cate5_lnb5.png");
-    } 
-    main aside .list li:nth-child(5) > a:hover {
-        background-image: url("../images/sub_cate5_lnb5_ov.png");
-    }  
-
-    /*====================*/
-    main aside .list li > a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        font-size: 0;
+        height: 29px;
+        margin-top: 5px;
     }
 
-
+    main aside .list > a:nth-child(1) > img {margin-top: 26px;}
+    
+    /*수정*/
+    main .list > a:nth-child(2) > img:hover {background-image:url("../images/sub_cate5_lnb2_ov.png");}
+    main .list > a:nth-child(3) > img:hover {background-image:url("../images/sub_cate5_lnb3_ov.png");}
+    main .list > a:nth-child(4) > img:hover {background-image:url("../images/sub_cate5_lnb4_ov.png");}
+    main .list > a:nth-child(5) > img:hover {background-image:url("../images/sub_cate5_lnb5_ov.png");}
+   
     main > .main_btm > article {
         position: relative;
         width: 802px;
-        height: 100%;
-        float: right;
-        box-sizing: border-box;
-        
+        height: 650px;
     }
 
+    main > .main_btm > article > nav {
+        position: absolute;
+        left: 40px;
+        width: 762px;
+        height: 72px;
+        border-bottom: 1px solid #C2C2C2;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    main > .main_btm nav > img {
+        position: absolute;
+        top: 41px;
+    }
+
+    main > .main_btm .nav_menu {
+        position: absolute;
+        right: 0px;
+        top: 50px;
+        display: flex;
+    }
+
+    main > .main_btm .nav_menu > img {width: 5px; height: 5px; margin: 6px;}
+    main > .main_btm .nav_menu > p {color: #8c8c8c;}
+    main > .main_btm .nav_menu span {color: #91BA15;}
     
     
     
@@ -258,56 +234,8 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
    
-
-    main > .main_btm > article > nav > img {
-        position: absolute;
-        top: 41px;
-        font-weight: 700;
-        display: flex;
-    }
-
-   
-   
-
-    main > .main_btm  nav > div {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        width: auto;
-        top: 44px;
-        right: 5px;
-    }
-    main > .main_btm  nav > div > ul {
-       padding-right: 4px;
-       padding-bottom: 7px;
-    }
-    main > .main_btm > article > nav a {
-        font-size: 12px;
-        font-weight: 400;
-        color: #8C8C8C;
-    }
-    main > .main_btm > article > nav a:nth-child(4) {
-        font-size: 12px;
-        font-weight: 800;
-        color: rgb(85, 133, 13);
-        
-    }
   </style>
 </head>
 <body>
@@ -351,32 +279,26 @@
         </header>
         <main>
             <div class="main_top">
-                <img src="../images/sub_top_tit4.png" alt="event">
+                <img src="../images/sub_top_tit5.png" alt="community">
             </div>
             <section class="main_btm">
                 <aside>
-                    <img src="../images/sub_aside_cate4_tit.png" alt="이벤트">
+                    <img src="../images/sub_aside_cate5_tit.png" alt="커뮤니티">
                     <img src="../images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list">
-                            <ul>
-                                <li class="on"><a href="#">공지사항</a></li>
-                                <li><a href="#">오늘의식단</a></li>
-                                <li><a href="#">나도요리사</a></li>
-                                <li><a href="#">1:1고객문의</a></li>
-                                <li><a href="#">자주묻는질문</a></li>
-                            </ul>
+                    	<a href="../community/notices.html"><img src="../images/sub_cate5_lnb1_ov.png" alt="공지사항"></a>
+                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2.png" alt="오늘의식단"></a>
+                        <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사"></a>
+                        <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
+                        <a href="../community/faq.html"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
                     </div>
                 </aside>
                 <article>
                     <nav>
                         <img src="../images/sub_nav_tit_cate5_tit1.png" alt="공지사항">
-                        <div>
-                            <ul>
-                                <img src="../images/sub_page_nav_ico.gif" alt="#">
-                            </ul>
-                            <a href="#"> HOME > </a>
-                            <a href="#">커뮤니티 > </a>
-                            <a href="#">공지사항</a>
+                        <div class="nav_menu">
+                            <img src="../images/sub_page_nav_ico.gif" alt="#">
+                            <p>HOME > 커뮤니티 > <span>공지사항</span></p> <!--수정-->
                         </div>
                     </nav>
                    	<section class="list">
