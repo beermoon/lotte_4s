@@ -56,7 +56,7 @@
     main aside .list {
         position: absolute;
         top: 81px;
-        right: 1px;
+        right: 2px;
         width: 175px;
         height: 233px;
         background-image: url("/farmstory/images/sub_aside_bg_lnb.png");
@@ -72,7 +72,6 @@
 
     main .list > a:nth-child(1) > img:hover {background-image:url("/farmstory/images/myinfo/myinfo_menu1_ov.png");}
     main .list > a:nth-child(2) > img:hover {background-image:url("/farmstory/images/myinfo/myinfo_menu2_ov.png");}
-    main .list > a:nth-child(3) > img:hover {background-image:url("/farmstory/images/myinfo/myinfo_menu3_ov.png");}
 
     main > .main_btm > article {
         position: relative;
@@ -173,6 +172,9 @@
   </style>
 </head>
 <body>
+
+	<script src="/farmstory/js/validation.js"></script>
+	
     <div id="wrapper">
         <header>
             <img src="/farmstory/images/head_top_line.png" alt="헤더 선">
@@ -222,7 +224,7 @@
                     <div class="list">
                         <a href="/farmstory/profile/cart.html"><img src="/farmstory/images/myinfo/myinfo_menu1.png" alt="장바구니"></a>
                         <a href="/farmstory/profile/order-history.html"><img src="/farmstory/images/myinfo/myinfo_menu2.png" alt="주문내역"></a>
-                        <a href="/farmstory/profile/update-info.html"><img src="/farmstory/images/myinfo/myinfo_menu3.png" alt="정보수정"></a>
+                        <a href="/farmstory/profile/update-info.html"><img src="/farmstory/images/myinfo/myinfo_menu3_ov.png" alt="정보수정"></a>
                     </div>
                 </aside>
                 <article>
@@ -235,57 +237,76 @@
                     </nav>
                     <div class="content">
                         <p>회원정보 설정</p>
-                        <form action="#">
+                        <form action="/farmstory/profile/updateinfo.do" name="formRegister" method="post">
                             <table class="setting">
                                 <tr>
                                     <td>아이디</td>
-                                    <td></td>
+                                    <td>
+                                    	<input type="text" name="uid" value="${sessUser.uid}">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>비밀번호</td>
-                                    <td><label><input type="password" placeholder="비밀번호 입력" size="25;" style="height: 27px;"></label></td>
+                                    <td>
+                                    	<input type="password" name="pass1" placeholder="비밀번호 입력" size="25;" style="height: 27px;">
+                                    	<span class="passResult"></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>비밀번호 확인</td>
-                                    <td><label><input type="password" placeholder="비밀번호 입력 확인" size="25;" style="height: 27px;"></label>
-                                        <input type="image" img src="/farmstory/images/user/chk_post.gif" alt="비밀번호">
+                                    <td>
+                                    	<input type="password" name="pass2" placeholder="비밀번호 입력 확인" size="25;" style="height: 27px;">
+                                        <button id="btnCheckPass">비밀번호 수정</button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>회원가입날짜</td>
-                                    <td>2022-01-01 12:45:12</td>
+                                    <td>${sessUser.regDate}</td>
                                 </tr>
                             </table>
                             <p>개인정보 수정</p>
                             <table class="modify">
                                 <tr>
                                     <td>이름</td>
-                                    <td><label><input type="text" placeholder="" size="25;" style="height: 25px;"></label></td>
+                                    <td>
+                                    	<input type="text" name="name" placeholder="" size="25;" style="height: 25px;">
+                                    	 <span class="nameResult"></span>   
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>별명</td>
-                                    <td><p>공백없는 한글, 영문, 숫자 입력</p><br>
-                                        <label><input type="text" placeholder="별명 입력" size="25;" style="height: 25px;"></label>
-                                        <input type="image" img src="/farmstory/images/user/chk_id.gif" alt="중복확인">
+                                    <td>
+                                    	<p>공백없는 한글, 영문, 숫자 입력</p><br>
+                                        <input type="text" placeholder="별명 입력" size="25;" style="height: 25px;">
+                                        <button type="button" id="btnCheckNick"><img src="/farmstory/images/user/chk_id.gif" alt="중복확인"></button> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>이메일</td>
-                                    <td><label><input type="text" placeholder="이메일 입력" size="25;" style="height: 25px;"></label>
-                                        <input type="image" img src="/farmstory/images/user/chk_auth.gif" alt="인증번호">
+                                    <td>
+                                    	<input type="text" name="email" placeholder="이메일 입력" size="25;" style="height: 25px;">
+                                        <button type="button" id="btnSendEmail"><img src="/farmstory/images/user/chk_auth.gif" alt="인증번호"></button> 
+                                    	<span class="emailResult"></span>
+                                		<div class="auth">
+                                    		<input type="text" name="auth" placeholder="인증번호 입력"/>
+                                    		<button type="button" id="btnAuthEmail"><img src="/farmstory/images/chk_confirm.gif" alt="확인"/></button>
+                                    	</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>휴대폰</td>
-                                    <td><label><input type="tel"  placeholder="휴대폰 입력" size="25;" style="height: 25px;"></label></td>
+                                    <td>
+                                    	<input type="text" name="hp" placeholder="휴대폰 입력" size="25;" style="height: 25px;">
+                                    	<span class="hpResult"></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>주소</td>
-                                    <td><label><input type="text" readonly placeholder="우편번호" size="25;" style="height: 25px;"></label>
-                                        <input type="image" img src="/farmstory/images/user/chk_post.gif" alt="우편찾기"><br>
-                                        
-                                        <label><input type="text" readonly placeholder="주소 검색" size="25;" style="width: 400px; height: 25px;"></label><br>  
-                                        <label><input type="text" placeholder="상세주소 입력" size="25;" style="width: 400px; height: 25px;"></label>
+                                    <td>
+                                    	<input type="text" name="zip" readonly placeholder="우편번호" size="25;" style="height: 25px;">
+                                        <button type="button" onclick="daumPostcode()"><img src="../images/user/chk_post.gif" alt="우편번호찾기"/></button>
+                                        <input type="text" name="addr1" readonly placeholder="주소검색" size="25;" style="width: 400px; height: 25px;"><br>  
+                                        <input type="text" name="addr2" placeholder="상세주소 입력" size="25;" style="width: 400px; height: 25px;">
                                     </td>
                                 </tr>
                                 <tr>

@@ -287,6 +287,7 @@ footer > .version {
     	}else if(result == 102){
     		alert('로그인을 먼저 하셔야 합니다.');
     	}
+    	
     </script>
         <div id="wrapper">
             <header>

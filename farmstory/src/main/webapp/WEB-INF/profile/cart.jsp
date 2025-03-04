@@ -20,7 +20,7 @@
         position: relative;
         width: 100%;
         height: 184px;
-        background-image: url("/farmstory/images/sub_top_bg.jpg");
+        background-image: url("/farmstory/images/myinfo/myinfo_top_bg.jpg");
     }
 
     main > .main_top > img {
@@ -56,7 +56,7 @@
     main aside .list {
         position: absolute;
         top: 81px;
-        right: 1px;
+        right: 2px;
         width: 175px;
         height: 233px;
         background-image: url("/farmstory/images/sub_aside_bg_lnb.png");
@@ -70,8 +70,8 @@
 
     main aside .list > a:nth-child(1) > img {margin-top: 26px;}
 
-    main .list > a:nth-child(1).on > img {background-image:url("/farmstory/images/sub_cate1_lnb1_ov.png");}
-    main .list > a:nth-child(2) > img:hover {background-image:url("/farmstory/images/sub_cate1_lnb1_ov.png");}
+     main .list > a:nth-child(2) > img:hover {background-image:url("/farmstory/images/myinfo/myinfo_menu2_ov.png");}
+    main .list > a:nth-child(3) > img:hover {background-image:url("/farmstory/images/myinfo/myinfo_menu3_ov.png");}
 
     main > .main_btm > article {
         position: relative;
@@ -224,23 +224,25 @@
         </header>
         <main>
             <section class="main_top">
-                <img src="/farmstory/images/sub_top_tit1.png" alt="introduction">
+                <img src="/farmstory/images/myinfo/myinfo_top_tit.png" alt="my info">
             </section>
             <section class="main_btm">
                 <aside>
                     <img src="/farmstory/images/sub_aside_cate2_tit.png" alt="장보기">
                     <img src="/farmstory/images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list">
-                        <a href="/farmstory/shop/product-list.html" class="on"><img src="/farmstory/images/sub_cate2_lnb1_ov.png" alt="장보기"></a>
+                        <a href="/farmstory/profile/cart.do"><img src="/farmstory/images/myinfo/myinfo_menu1_ov.png" alt="장바구니"></a>
+                        <a href="/farmstory/profile/orderhistory.do"><img src="/farmstory/images/myinfo/myinfo_menu2.png" alt="주문내역"></a>
+                        <a href="/farmstory/profile/updateinfo.do"><img src="/farmstory/images/myinfo/myinfo_menu3.png" alt="정보수정"></a>
 
                     </div>
                 </aside>
                 <article>
                     <nav>
-                        <img src="/farmstory/images/sub_nav_tit_cate2_tit1.png" alt="장보기">
+                        <img src="/farmstory/images/myinfo/myinfo_nav_tit1.png" alt="장바구니">
                         <div class="nav_menu">
                             <img src="/farmstory/images/sub_page_nav_ico.gif" alt="#">
-                            <p>HOME > 장보기 > <span>장보기</span></p>
+                            <p>HOME > 나의정보 > <span>장바구니</span></p>
                         </div>
                     </nav>
                     <div class="content">

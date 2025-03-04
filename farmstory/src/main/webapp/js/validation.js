@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function(){
 		fetch('/farmstory/user/check.do?type=uid&value='+value) 
 			.then(response => response.json()) 
 			.then((data)=>{ 
-				console.log(data);
 				
 				if(data.count > 0){
 					uidResult.innerText = '이미 사용중인 아이디 입니다.';

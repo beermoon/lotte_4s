@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,7 +218,59 @@ footer > .version {
 }
     </style>
 </head>
-<body>
+
+<script>
+	document.addEventListener ('DOMContentLoaded', function(){
+		
+		const rePass  = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{5,16}$/;
+		
+		let isPassOk = false;
+		const passResult = document.getElementsByClassName('passResult')[0];
+		const next = document.querySelector('.btnNext');
+		
+		next.onclick = function(){
+			
+			const pass1 = formRegister.pass1.value; 
+			const pass2 = formRegister.pass2.value;
+			
+			if (pass1 == ''){
+				alert('비밀번호를 입력하세요.');
+				return false;
+			}else if (pass2 == ''){
+				alert('비밀번호 확인을 입력하세요.');
+				return false;
+			}else if (!isPassOk){
+				alert('비밀번호가 유효하지 않습니다.');
+				return false;
+			}
+			
+		}
+		
+		formRegister.pass2.addEventListener('focusout', function(){
+			
+			const value1 = formRegister.pass1.value;
+			const value2 = formRegister.pass2.value;
+			
+			if(!value1.match(rePass)){
+				passResult.innerText = '비밀번호는 숫자, 소문자, 대문자, 특수문자 조합 8자리';
+				passResult.style.color = 'red';
+				isPassOk = false;
+				return;
+			}
+			
+			if(value1 == value2){
+				passResult.innerText = '사용 가능한 비밀번호 입니다.';
+				passResult.style.color = 'green';
+				isPassOk = true;
+			}else{
+				passResult.innerText = '비밀번호가 일치하지 않습니다.';
+				passResult.style.color = 'red';
+				isPassOk = false;
+			}
+		});
+	});
+</script>
+
     <body>
         <div id="wrapper">
             <header>
@@ -260,23 +313,26 @@ footer > .version {
             
             <main id="find">
                 <section class="changePassword">
-                    <form action="#">
+                    <form action="/farmstory/search/resetPassword.do" name="formRegister" method="post">
                         <h2 class="tit">비밀번호 변경</h2>
                         <table border="0">
                             <tr>
                                 <td>아이디</td>
-                                <td>honggildong</td>
+                                <td>
+                                	<input type="text" name="uid" value="${uid}">
+                                </td>
                             </tr>
                             <tr>
                                 <td>새 비밀번호</td>
                                 <td>
-                                    <input type="email" name="pass1" placeholder="새 비밀번호 입력"/>
+                                    <input type="password" name="pass1" placeholder="새 비밀번호 입력"/>
+                                	<span class="passResult"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>새 비밀번호 확인</td>
                                 <td>
-                                    <input type="email" name="pass1" placeholder="새 비밀번호 입력"/>
+                                    <input type="password" name="pass2" placeholder="새 비밀번호 입력 확인"/>
                                 </td>
                             </tr>
                         </table>                                        
@@ -288,8 +344,8 @@ footer > .version {
                     </p>
     
                     <div>
-                        <button class="btnCancel">취소</button>
-                        <button class="btnNext">다음</button>
+                       <a href="/farmstory/find/password.do" class="btn btnCancel">취소</a>
+                    	<a href="/farmstory/user/login.do" class="btn btnNext">로그인</a>
                     </div>
                 </section>
             </main>

@@ -271,8 +271,8 @@ footer > .version {
                     </p>
     
                     <div>
-                        <button class="btnlogin">로그인</button>
-                        <button class="btnfind">비밀번호 찾기</button>
+                    	<a href="/farmstory/user/login.do" class="btn btnCancel">로그인</a>
+                    	<a href="/farmstory/search/password.do" class="btn btnfind">비밀번호 찾기</a>
                     </div>
                 </section>
             </main>

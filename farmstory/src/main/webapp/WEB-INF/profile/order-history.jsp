@@ -56,7 +56,7 @@
     main aside .list {
         position: absolute;
         top: 81px;
-        right: 1px;
+        right: 2px;
         width: 175px;
         height: 233px;
         background-image: url("/farmstory/images/sub_aside_bg_lnb.png");
@@ -214,9 +214,9 @@
                     <img src="/farmstory/images/myinfo//myinfo_menu_tit.png" alt="나의정보">
                     <img src="/farmstory//images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list">
-                        <a href="/farmstory//profile/cart.html"><img src="/farmstory/images/myinfo/myinfo_menu1.png" alt="장바구니"></a>
-                        <a href="/farmstory//profile/order-history.html"><img src="/farmstory/images/myinfo/myinfo_menu2_ov.png" alt="주문내역"></a>
-                        <a href="/farmstory//profile/update-info.html"><img src="/farmstory/images/myinfo/myinfo_menu3.png" alt="정보수정"></a>
+                        <a href="/farmstory//profile/cart.do"><img src="/farmstory/images/myinfo/myinfo_menu1.png" alt="장바구니"></a>
+                        <a href="/farmstory//profile/orderhistory.do"><img src="/farmstory/images/myinfo/myinfo_menu2_ov.png" alt="주문내역"></a>
+                        <a href="/farmstory//profile/updateinfo.do"><img src="/farmstory/images/myinfo/myinfo_menu3.png" alt="정보수정"></a>
                     </div>
                 </aside>
                 <article>
