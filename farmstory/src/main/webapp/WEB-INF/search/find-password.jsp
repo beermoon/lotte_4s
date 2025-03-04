@@ -203,10 +203,13 @@ footer > .version {
 </head>
 <script>
 	document.addEventListener ('DOMContentLoaded', function(){
+		
+		const reEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+		
+		let isEmailOk = false;
 		let isAuthOk = false;
 		let preventDoubleClick = false; 
 	    const next = document.querySelector('.btnNext');
-	    const cancel = document.querySelector('.btnCancel');
 	    
 		next.onclick = function(){
 			
@@ -241,8 +244,18 @@ footer > .version {
 				return;
 			}
 			
+			if(!email.match(reEmail)){ 
+				emailResult.innerText = '이메일이 유효하지 않습니다.';
+				emailResult.style.color = 'red';
+				isEmailOk = false;
+				return;
+			}else{
+				emailResult.innerText = '';
+			}
+			
+			
 			preventDoubleClick = true;
-			const response = await fetch('/farmstory/search/password.do?uid='+ uid + '&email=' + email);
+			const response = await fetch('/farmstory/search/password.do?email='+ email);
 			const data = await response.json();
 		}
 		

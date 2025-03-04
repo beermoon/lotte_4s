@@ -206,10 +206,13 @@ footer > .version {
 
 	<script>
 		document.addEventListener ('DOMContentLoaded', function(){
+			
+			const reEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+			
+			let isEmailOk = false;
 			let isAuthOk = false;
 			let preventDoubleClick = false; 
 		    const next = document.querySelector('.btnNext');
-		    const cancel = document.querySelector('.btnCancel');
 		    
 			next.onclick = function(){
 				
@@ -217,8 +220,8 @@ footer > .version {
 				const email = formRegister.email.value;
 				const auth = formRegister.auth.value;
 			
-				if(uid == ''){
-					alert('아이디를 입력하세요.');
+				if(name == ''){
+					alert('이름을 입력하세요.');
 					return false;
 				}else if (email == ''){
 					alert('이메일을 입력하세요.');
@@ -229,7 +232,8 @@ footer > .version {
 				}else if (!isAuthOk) {
 	                alert('이메일 인증을 완료하세요.');
 	                return false; 
-	            }			
+	            }
+				return true;
 			}
 			
 			const btnAuth = document.getElementsByClassName('btnAuth')[0];
@@ -242,6 +246,15 @@ footer > .version {
 				
 				if(preventDoubleClick){
 					return;
+				}
+				
+				if(!email.match(reEmail)){ 
+					emailResult.innerText = '이메일이 유효하지 않습니다.';
+					emailResult.style.color = 'red';
+					isEmailOk = false;
+					return;
+				}else{
+					emailResult.innerText = '';
 				}
 				
 				preventDoubleClick = true;

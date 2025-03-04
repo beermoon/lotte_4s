@@ -80,13 +80,12 @@ public class UserDAO extends DBHelper{
 		return userDTO;
 	}
 	
-	public String selectUserPass(UserDTO dto) { // 비밀번호 찾기
+	public String selectUserPass(String email) { // 비밀번호 찾기
 		String uid = null;
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_USER_UID);
-			psmt.setString(1, dto.getPass());
-			psmt.setString(2, dto.getEmail());
+			psmt = conn.prepareStatement(SQL.SELECT_USER_PASS);
+			psmt.setString(1, email);
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				uid = rs.getString(1);
@@ -131,6 +130,20 @@ public class UserDAO extends DBHelper{
 	
 	public List<UserDTO> selectAllUser(){
 		return null;
+	}
+	
+	public int updateUserPass(UserDTO dto) {
+		int result = 0;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_USER_PASS);
+			psmt.setString(1, dto.getPass());
+			psmt.setString(2, dto.getUid());
+			result = psmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	public void updateUser(UserDTO dto) {

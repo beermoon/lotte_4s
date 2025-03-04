@@ -30,21 +30,15 @@ public class PasswordController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		String uid = req.getParameter("uid"); // 아이디
 		String email = req.getParameter("email"); // 이메일
-
-		UserDTO dto = new UserDTO(); // DTO 생성
-		dto.setName(uid);
-		dto.setEmail(email);
 		
-		String userId= service.findUserPass(dto); // Pass 찾기 DAO로 보내기
+		String userId= service.findUserPass(email); // Pass 찾기 DAO로 보내기
 		
 		String code = service.sendEmailCode(email); // 이메일 전송한 인증번호 반환
 		
 		HttpSession session = req.getSession(); // 인증번호 세션에 저장
 		session.setAttribute("sessAuthCode", code);
-		
-		req.setAttribute("uid", userId);
+		session.setAttribute("userId", userId);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/search/find-password.jsp");
 		dispatcher.forward(req, resp);
