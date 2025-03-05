@@ -82,7 +82,7 @@ public class SQL {
 	public final static String WHERE_FOR_SEARCH_WRITER  = "WHERE `nick` LIKE ? ";	
 	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
-																									
+
 	public static final String INSERT_COMMUNITY = "insert into `Community` set "
 
 
@@ -95,8 +95,20 @@ public class SQL {
 														+ "`wdate`=NOW()";
 		
 
+
 	// comment
 	public static final String INSERT_COMMENT = "insert into `comment` set "
+
+
+		
+		
+		
+		
+	
+
+		// comment
+		public static final String INSERT_COMMENT = "insert into `comment` set "
+													
 
 													+ "`parent`=?,"
 													+ "`content`=?,"

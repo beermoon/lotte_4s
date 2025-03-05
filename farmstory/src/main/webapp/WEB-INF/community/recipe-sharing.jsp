@@ -8,73 +8,7 @@
 
     <link rel="stylesheet" href="../css/_header.css">
     <link rel="stylesheet" href="../css/_footer.css">
-    <script>
-    	
-    	document.addEventListener('DOMContentLoaded', function(){
-    		console.log('DOMContentLoaded...');
-    		
-    		const commentList = document.getElementsByClassName('commentList')[0];
-    		
-    		// 댓글 등록
-    		formComment.onsubmit = function(e){
-    			e.preventDefault();
-    			
-    			// 입력한 데이터 가져오기
-    			const parent = formComment.parent.value;
-    			const writer = formComment.writer.value;
-    			const content = formComment.content.value;
-    			
-    			// 폼 데이터 생성
-    			const formData = new FormData();
-    			formData.append('parent', parent);
-    			formData.append('writer', writer);
-    			formData.append('content', content);
-    			console.log(formData);
-    			
-    			// 서버 전송
-    			fetch('/farmstory/comment/write.do', {
-    				method: 'POST',
-    				body: formData
-    			})
-    			.then(response => response.json())
-    			.then(data => {
-    				console.log(data);
-    				
-    				// 동적 태그 생성
-    				if(data != null){
-    					
-    					alert('댓글이 등록 되었습니다.');
-    					
-    					// 입력 필드 비우기
-    					
-    					const community = `<community>
-					                        <span class='date'>\${data.wdate}</span>
-					                        <span class='nick'>\${data.nick}</span>
-					                        <p class='content'>\${data.content}</p>
-					                        <div>
-					                            <a href='#' class='remove'>삭제</a>
-					                            <a href='#' class='modify'>수정</a>
-					                        </div>
-					                     </community>`;
-					                     
-    					commentList.insertAdjacentHTML('beforeend', community);
-    					
-    				}else{
-    					alert('댓글 등록 실패 했습니다.');
-    				}
-    				
-    			})
-    			.catch(err => {
-    				console.log(err);
-    			});
-    		}
-    		
-    		
-    	});
-    
-    
-    </script>
-
+   
   <style>
     main {
         width: 100%;
@@ -525,262 +459,114 @@ color: #111111;
     
 
 
-    .form-group4 {
+    .commentList {
+        box-sizing: border-box;
+		position: absolute;
+		height: 197px;
+		left: 0px;
+		right: 0px;
+		top: 493px;
+		background: #F9F9F9;
+		border: 1px solid #E3E3E3;
+    }
+
+   .commentList h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .commentList article {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .commentList article:last-child {
+        border-bottom: none;
+    }
+
+    .commentList .date {
+        font-size: 14px;
+        color: #888;
+    }
+
+    .commentList .nick {
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .commentList .content {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .commentList div {
+        text-align: right;
+    }
+
+    .commentList a {
+        font-size: 14px;
+        color: #333;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    /* 댓글 입력 폼 스타일 */
+    .commentForm {
         box-sizing: border-box;
 
-position: absolute;
-height: 197px;
-left: 0px;
-right: 0px;
-top: 493px;
-
-background: #F9F9F9;
-border: 1px solid #E3E3E3;
-    }
-
-    .form-group4 > div:nth-of-type(1) {
-        box-sizing: border-box;
-
-position: absolute;
-height: 25px;
-left: 17px;
-right: 17px;
-top: 17px;
-
-border-bottom: 1px dashed #111111;
-
-    }
-
-    .form-group4 > div:nth-of-type(1)> span{
-        position: absolute;
-width: 52.2px;
-height: 15px;
-left: 0px;
-top: 1px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 13px;
-line-height: 16px;
-display: flex;
-align-items: center;
-
-color: #000000;
-
-    }
-
-    .form-group4 > div:nth-of-type(2) {
-        position: absolute;
-height: 71px;
-left: 17px;
-right: 17px;
-top: 52px;
-    }
-
-    .form-group4 > div:nth-of-type(2) > span:nth-of-type(1) {
-        position: absolute;
-width: 95.2px;
-height: 14px;
-left: 0px;
-top: 1px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 10.6875px;
-line-height: 13px;
-display: flex;
-align-items: center;
-
-color: #000000;
-    }
-
-    .form-group4 > div:nth-of-type(2) > span:nth-of-type(2) {
-        position: absolute;
-
-left: 10px;
-top: 28px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-display: flex;
-align-items: center;
-
-color: #000000;
-
-    }
-    .form-group4 > div:nth-of-type(2) > span:nth-of-type(3) {
-        position: absolute;
-width: 51.2px;
-height: 14px;
-left: 677px;
-top: 55px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-display: flex;
-align-items: center;
-
-color: #111111;
-    }
-
-    .form-group4  > span{
-        position: absolute;
-
-left: calc(50% - 129.2px/2 + 0.1px);
-top: 144px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-    }
-
-        
-    .form-group5 {
-        box-sizing: border-box;
-
-position: absolute;
-height: 178px;
-left: 0px;
-right: 0px;
+		position: absolute;
+		height: 178px;
+		left: 0px;
+		right: 0px;
 top: 700px;
-
-background: #F9F9F9;
-border: 1px solid #E3E3E3;
     }
 
-    .form-group5 > form {
-        position: absolute;
-height: 64px;
-left: 17px;
-right: 17px;
-top: 52px;
+    .commentForm h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
-    .form-group5 > form >button:nth-of-type(1) {
-        box-sizing: border-box;
-
-position: absolute;
-width: 42px;
-height: 35px;
-left: 617px;
-top: 74px;
-
-border: 1px solid #BEBEBE;
+    .commentForm textarea {
+        width: 100%;
+        height: 80px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 14px;
+        resize: none;
     }
 
-    .form-group5 > form >button:nth-of-type(1) > span {
-        position: absolute;
-width: 24.2px;
-height: 14px;
-left: 9px;
-top: 10px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #111111;
-    }
-
-    .form-group5 > form >button:nth-of-type(2) {
-            
-        box-sizing: border-box;
-
-position: absolute;
-width: 66px;
-height: 35px;
-left: 662px;
-top: 74px;
-
-background: #4B545E;
-border: 1px solid #3B3C3F;
-    }
-
-    .form-group5 > form >button:nth-of-type(2) >span {
-        position: absolute;
-width: 48.2px;
-height: 14px;
-left: 9px;
-top: 10px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-
-    }
-        
-    .form-group5 > form > textarea {
-        box-sizing: border-box;
-
-position: absolute;
-height: 60px;
-left: 0px;
-right: 0px;
-top: 0px;
-overflow: scroll;
-
-background: #FFFFFF;
-border: 1px solid #E4EAEC;
-
-    }
-
-    .form-group5 > div {
-        box-sizing: border-box;
-
-position: absolute;
-height: 25px;
-left: 17px;
-right: 17px;
-top: 17px;
-
-border-bottom: 1px dashed #111111;
-    }
-
-    .form-group5 > div > span {
-        position: absolute;
-        width: 52.2px;
-        height: 15px;
-        left: 0px;
-        top: 1px;
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 13px;
-        line-height: 16px;
+    .commentForm div {
         display: flex;
-        align-items: center;
-
-        color: #000000;
-
+        justify-content: flex-end;
+        margin-top: 10px;
     }
+
+    .commentForm .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    .btnCancel {
+        background: #fff;
+        border: 1px solid #aaa;
+        color: #333;
+        margin-right: 5px;
+    }
+
+    .btnComplete {
+        background: #333;
+        color: #fff;
+        border: 1px solid #333;
+    }
+
+        
+   
 
     button:hover {
         
@@ -796,6 +582,73 @@ border-bottom: 1px dashed #111111;
   </style>
 </head>
 <body>
+
+	 <script>
+    	document.addEventListener('DOMContentLoaded', function(){
+    		
+    		const commentList = document.getElementsByClassName('commentList')[0];
+    		
+    		// 댓글 등록
+    		formComment.onsubmit = function(e){
+    			e.preventDefault();
+    			
+    			// 입력한 데이터 가져오기
+    			const parent = formComment.parent.value;
+    			const writer = formComment.writer.value;
+    			const content = formComment.content.value;
+    			
+    			// 폼 데이터 생성
+    			const formData = new FormData();
+    			formData.append('parent', parent);
+    			formData.append('writer', writer);
+    			formData.append('content', content);
+    			console.log(formData);
+    			
+    			// 서버 전송
+    			fetch('/farmstory/comment/write.do', {
+    				method: 'POST',
+    				body: formData
+    			})
+    			.then(response => response.json())
+    			.then(data => {
+    				console.log(data);
+    				
+    				// 동적 태그 생성
+    				if(data != null){
+    					
+    					alert('댓글이 등록 되었습니다.');
+    					
+    					// 입력 필드 비우기
+    					
+    					const community = `<community>
+					                        <span class='date'>\${data.wdate}</span>
+					                        <span class='nick'>\${data.nick}</span>
+					                        <p class='content'>\${data.content}</p>
+					                        <div>
+					                            <a href='#' class='remove'>삭제</a>
+					                            <a href='#' class='modify'>수정</a>
+					                        </div>
+					                     </community>`;
+					                     
+    					commentList.insertAdjacentHTML('beforeend', community);
+    					
+    				}else{
+    					alert('댓글 등록 실패 했습니다.');
+    				}
+    				
+    			})
+    			.catch(err => {
+    				console.log(err);
+    			});
+    		}
+    		
+    		
+    	});
+    
+    
+    </script>
+	
+
     <div id="wrapper">
         <header>
             <img src="../images/head_top_line.png" alt="헤더 선">
@@ -843,11 +696,11 @@ border-bottom: 1px dashed #111111;
                     <img src="../images/sub_aside_cate5_tit.png" alt="커뮤니티">
                     <img src="../images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list"> <!--수정-->
-                        <a href="../community/notices.html"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
-                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2.png" alt="오늘의식단"></a>
-                        <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3_ov.png" alt="나도요리사"></a>
-                        <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
-                        <a href="../community/faq.html"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
+                        <a href="../community/notices.do"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
+                        <a href="../community/today-menu.do"><img src="../images/sub_cate5_lnb2.png" alt="오늘의식단"></a>
+                        <a href="../community/recipe-sharing.do"><img src="../images/sub_cate5_lnb3_ov.png" alt="나도요리사"></a>
+                        <a href="../community/customer-inquiry.do"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
+                        <a href="../community/faq.do"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
                     </div>
                 </aside>
                 <article>
@@ -895,38 +748,41 @@ border-bottom: 1px dashed #111111;
                             <button type="button" class="c_menu" ><a href="/farmstory/community/list.do"><span>목록</span></a></button>
                         </form>
     
-                        <div class="form-group4">
-                            <div>
-                                <span>댓글목록</span>
-                            </div>
-                            <div>
-                                <span>2024-05-20 길동이</span>
-                                <span>댓글 샘플 입니다.</span>
-                                <span><a href="">삭제 수정</a></span>
-                            </div>
-                            <span>등록된 댓글이 없습니다.</span>
-                        </div>
-    
-                        <div class="form-group5">
-                            <form action="/farmstory/comment/write.do" method="post">
-                                <button>
-                                    <span>취소</span>
-                                </button>
-                                <button>
-                                    <span>작성완료</span>
-                                </button>
-                                <textarea name="" id=""></textarea>
-                            </form>
-    
-                            <div>
-                                <span>댓글쓰기</span>
-                            </div>
-                            
-                        </div>
-    					</form>
+		                   <!-- 댓글목록 -->
+		               <section class="commentList">
+		                   <h3>댓글목록</h3>
+						<c:forEach var="comment" items="${comments}">
+		                    <article>
+		                        <span class="date">${comment.wdate}</span>
+		                        <span class="nick">${comment.nick}</span>	                        
+		                        <p class="content">${comment.content}</p>                        
+		                        <div>
+		                            <a href="#" class="remove">삭제</a>
+		                            <a href="#" class="modify">수정</a>
+		                        </div>
+		                    </article>
+		                   </c:forEach>
+		
+						<c:if test="${empty comments}">
+		                   	<p class="empty">등록된 댓글이 없습니다.</p>
+						</c:if>
+		               </section>
+		
+		               <!-- 댓글쓰기 -->
+		               <section class="commentForm">
+		                   <h3>댓글쓰기</h3>
+		                   <form name="formComment" action="/farmstory/community/recipe-sharing.do" method="post">
+		                   	<input type="hidden" name="parent" value="${articleDTO.no}">
+		                   	<input type="hidden" name="writer" value="${sessUser.uid}">
+		                       <textarea name="content" placeholder="댓글 입력"></textarea>
+		                       <div>
+		                           <a href="#" class="btn btnCancel">취소</a>
+		                           <input type="submit" value="작성완료" class="btn btnComplete"/> <!-- onsubmit 실행, form의 데이터가 한번에 전송된다 -->
+		                       </div>
+		                   </form>
+		               </section>
+    			
                     </section>
-    
-                    
                  </article>   
             </section>
         </main>
