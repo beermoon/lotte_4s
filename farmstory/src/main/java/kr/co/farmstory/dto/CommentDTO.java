@@ -6,7 +6,7 @@ public class CommentDTO {
 	private String content;
 	private String writer;
 	private String regip;
-	private String wdate;
+	
 	
 	// 추가 필드
 	private String nick;
@@ -53,16 +53,11 @@ public class CommentDTO {
 	public void setRegip(String regip) {
 		this.regip = regip;
 	}
-	public String getWdate() {
-		return wdate;
-	}
-	public void setWdate(String wdate) {
-		this.wdate = wdate;
-	}
+	
 	@Override
 	public String toString() {
 		return "CommentDTO [cno=" + cno + ", parent=" + parent + ", content=" + content + ", writer=" + writer
-				+ ", regip=" + regip + ", wdate=" + wdate + "]";
+				+ ", regip=" + regip + "]";
 	}
 	
 }

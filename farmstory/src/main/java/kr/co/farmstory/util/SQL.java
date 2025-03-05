@@ -1,10 +1,8 @@
 package kr.co.farmstory.util;
-
 public class SQL {
 	
-	// terms 
+	// terms
 	public static final String SELECT_TERMS = "select * from `terms` where `no`=?";
-
 	// user
 	public static final String SELECT_COUNT_USER = "select COUNT(*) from `user` ";
 	public static final String WHERE_UID = "where `uid`=?";
@@ -16,7 +14,6 @@ public class SQL {
 	public static final String SELECT_USER_UID = "SELECT `name`, `uid`, `email`, `regDate` "
 												+ "FROM `user` "
 												+ "WHERE `name`=? AND `email`=?";
-
 	public static final String SELECT_USER_PASS = "SELECT `uid` FROM `user` WHERE `email`=?;";
 	public static final String SELECT_USER = "select * from `user` where `uid`=? and `pass`=SHA2(?, 256)";
 	
@@ -34,6 +31,7 @@ public class SQL {
 											+ "`addr2`=?,"
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
+
 	
 
 						
@@ -46,6 +44,7 @@ public class SQL {
 	
 
 	
+
 	// community
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `Community`";
 	public static final String SELECT_COUNT_COMMUNITY = "SELECT COUNT(*) FROM `Community`";
@@ -73,7 +72,6 @@ public class SQL {
 																	+ "FROM `Community` AS a "
 																	+ "JOIN `user` AS u ON a.writer = u.uid ";
 		
-
 	public final static String SELECT_COUNT_COMMUNITY_FOR_SEARCH = "select count(*) from `Community` as a ";
 	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON a.writer = u.uid ";
 	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
@@ -82,6 +80,7 @@ public class SQL {
 	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
 															
+
 	
 	
 
@@ -89,6 +88,10 @@ public class SQL {
 																
 		
 		public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
+												
+	public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
 														+ "`cate`=?,"
 														+ "`title`=?,"
 														+ "`content`=?,"
@@ -97,15 +100,18 @@ public class SQL {
 														+ "`regip`=?,"
 														+ "`wdate`=NOW()";
 		
+		
+		
+		
+		
 		// comment
 		public static final String INSERT_COMMENT = "insert into `comment` set "
 													+ "`parent`=?,"
 													+ "`content`=?,"
 													+ "`writer`=?,"
-													+ "`regip`=?,"
-													+ "`wdate`=NOW()";
+													+ "`regip`=?,";
+													
 		
-
 
 	
 	public static final String SELECT_ALL_COMMENT_BY_PARENT = "SELECT "
@@ -133,6 +139,7 @@ public class SQL {
 	public final static String SELECT_FILE_BY_FNO = "select * from `file` where `fno`=?";
 	public final static String UPDATE_FILE_DOWNLOAD_COUNT = "UPDATE `file` SET `download` = `download` + 1 WHERE `fno`=?";
 	
+
 		
 	
 
@@ -140,4 +147,8 @@ public class SQL {
 						
 
 
+
+
+			
+}
 

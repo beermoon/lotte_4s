@@ -485,18 +485,18 @@
                     <img src="../images/sub_aside_cate5_tit.png" alt="커뮤니티">
                     <img src="../images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list"> <!--수정-->
-                    <form action="/farmstory/community/today-menu.do" method="post">
+                  
                         <a href="../community/notices.html"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
-                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2_ov.png" alt="오늘의식단" value="오늘의 식단 "></a>
-                        <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사"></a>
+                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2_ov.png" alt="오늘의식단" ></a>
+                        <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사" value="나도 요리사" ></a>
                         <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
                         <a href="../community/faq.html"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
-                        </form>
+                      
                     </div>
                 </aside>
                 <article>
                     <nav>
-                        <img src="../images/sub_nav_tit_cate5_tit2.png" alt="오늘의식단단">
+                        <img src="../images/sub_nav_tit_cate5_tit2.png" alt="오늘의식단">
                         <div class="nav_menu">
                             <img src="../images/sub_page_nav_ico.gif" alt="#">
                             <p>HOME > 커뮤니티 > <span>오늘의식단</span></p> <!--수정-->
@@ -504,10 +504,10 @@
                     </nav>
                     <section>
                         <span>글쓰기</span>
-                        <form action="/farmstory/community/today-menu.do" method="post">
+                        <form action="/farmstory/community/today-menu.do" method="post"  enctype="multipart/form-data">
                             <button type="submit" class="submit"><span>작성완료</span></button>
                             <button type="button" class="cancle"><span>취소</span></button>
-                          
+                          	<input type="text" id="cate" name="cate" value="오늘의 식단 "> 
                             
                             <div class="form-group1">
                                 <label for="title"><span>제목</span></label>
