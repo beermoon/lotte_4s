@@ -793,12 +793,12 @@ border-bottom: 1px dashed #111111;
                     </nav>
                     <section>
                         <span>글보기</span>
-                        <form action="">
+                        <form >
                             
                             <div class="form-group1">
                                 <label for="title"><span>제목</span></label>
                                 <div>
-                                    <label for="title"><span>제목입니다.</span></label>
+                                   
                                 </div>
                                 
                             </div>
@@ -834,7 +834,7 @@ border-bottom: 1px dashed #111111;
                         </div>
     
                         <div class="form-group5">
-                            <form action="">
+                            <form action="/farmstory/comment/write.do" method="post">
                                 <button>
                                     <span>취소</span>
                                 </button>
@@ -849,7 +849,7 @@ border-bottom: 1px dashed #111111;
                             </div>
                             
                         </div>
-    
+    					</form>
                     </section>
     
                     

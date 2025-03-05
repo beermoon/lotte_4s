@@ -482,22 +482,19 @@
                 <aside>
                     <img src="../images/sub_aside_cate5_tit.png" alt="커뮤니티">
                     <img src="../images/sub_aside_bg_line.png" alt="목록선">
-                    <form action="/farmstory/community/today-menu.do" method="post">
-                    <select cate required>
-                    <div class="list"> <!--수정-->
+                   
+                   
+                    <div class="list" > <!--수정-->
                         <a href="../community/notices.html"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
                         <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2.png" alt="오늘의식단"></a>
                         <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사"></a>
-                        <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4_ov.png" alt="1:1고객문의"></a>
+                        <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4_ov.png" alt="1:1고객문의" ></a>
                         <a href="../community/faq.html"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
                     </div>
-                    </select>
                     </form>
                 </aside>
                 
-                
-                
-                
+           
                 <article>
                     <nav>
                         <img src="../images/sub_nav_tit_cate5_tit4.png" alt="1:1고객문의의">
@@ -508,7 +505,9 @@
                     </nav>
                     <section>
                         <span>글수정</span>
-                        <form action="">
+                        <form action="/farmstory/community/customer-inquiry.do" method="post" enctype="multipart/form-data">
+                       		
+                       		<input type="text" id="cate" name="cate" value="1:1 고객문의  "> 
                             <button type="submit" class="submit"><span>수정완료</span></button>
                             <button type="button" class="cancle"><span>취소</span></button>
                             <div class="form-group1">
