@@ -190,7 +190,7 @@ footer > .version {
     </style>
   </head>
   <body>
- 	 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+ 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="/farmstory/js/daumPostcode.js"></script>
 	<script src="/farmstory/js/validation.js"></script>
     <div id="wrapper">
@@ -282,9 +282,9 @@ footer > .version {
                                 <input type="email" name="email" placeholder="이메일 입력"/>
                                 <button type="button" id="btnSendEmail"><img src="/farmstory/images/user/chk_auth.gif" alt="인증번호 받기"/></button>
                                 <span class="emailResult"></span>
-                                <div class="auth">
+                                <div class="auth" style="display: none;">
                                     <input type="text" name="auth" placeholder="인증번호 입력"/>
-                                    <button type="button" id="btnAuthEmail"><img src="/farmstory/images/chk_confirm.gif" alt="확인"/></button>
+                                    <button type="button" id="btnAuthEmail">확인</button>
                                 </div>
                             </td>
                         </tr>
@@ -306,7 +306,7 @@ footer > .version {
                         </tr>
                     </table>
                     <div>
-                        <button class="btnCancel"><a href="/farmstory/user/login.do">취소</button>
+                        <button class="btnCancel"><a href="/farmstory/main/main.do">취소</a></button>
                         <input type="submit" value="회원가입" class="btn btnRegister"/>
                     </div>
                 </form>

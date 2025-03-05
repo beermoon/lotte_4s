@@ -7,7 +7,7 @@ const reEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z
 const reHp    = /^01(?:0|1|[6-9])-(?:\d{4})-\d{4}$/;
 
 document.addEventListener('DOMContentLoaded', function(){ 
-	
+
 	// 유효성 검사에 사용할 상태 변수
 	let isUidOk = false;
 	let isPassOk = false;
@@ -20,33 +20,38 @@ document.addEventListener('DOMContentLoaded', function(){
 	const btnCheckUid = document.getElementById('btnCheckUid'); 
 	const uidResult = document.getElementsByClassName('uidResult')[0]; 
 	
-	btnCheckUid.onclick = function(){ 			
-		const value = formRegister.uid.value; 
-		
-		if(!value.match(reUid)){ 
-			uidResult.innerText = '아이디 형식에 맞지 않습니다.';
-			uidResult.style.color = 'red';
-			isUidOk = false; 
-			return; 
+	if(btnCheckUid != null){
+	
+		btnCheckUid.onclick = function(){
+			const value = formRegister.uid.value; 
+			
+			if(!value.match(reUid)){ 
+				uidResult.innerText = '아이디 형식에 맞지 않습니다.';
+				uidResult.style.color = 'red';
+				isUidOk = false; 
+				return; 
+			}
+			
+			fetch('/farmstory/user/check.do?type=uid&value='+value) 
+				.then(response => response.json()) 
+				.then((data)=>{ 
+					
+					if(data.count > 0){
+						uidResult.innerText = '이미 사용중인 아이디 입니다.';
+						uidResult.style.color = 'red';
+						isUidOk = false;
+					}else{
+						uidResult.innerText = '사용 가능한 아이디 입니다.';
+						uidResult.style.color = 'green';
+						isUidOk = true;
+					}
+				})
+				.catch((err)=>{
+					console.log(err);
+				});
 		}
-		
-		fetch('/farmstory/user/check.do?type=uid&value='+value) 
-			.then(response => response.json()) 
-			.then((data)=>{ 
-				
-				if(data.count > 0){
-					uidResult.innerText = '이미 사용중인 아이디 입니다.';
-					uidResult.style.color = 'red';
-					isUidOk = false;
-				}else{
-					uidResult.innerText = '사용 가능한 아이디 입니다.';
-					uidResult.style.color = 'green';
-					isUidOk = true;
-				}
-			})
-			.catch((err)=>{
-				console.log(err);
-			});
+	}else {
+		isUidOk = true;
 	}
 	
 	// 2.비밀번호 유효성 검사
@@ -110,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function(){
 		try {
 			const response = await fetch('/farmstory/user/check.do?type=nick&value='+value); 
 			const data = await response.json(); 
-			console.log(data);
 			
 			if(data.count > 0){
 				nickResult.innerText = '이미 사용중인 별명 입니다.';
@@ -226,19 +230,23 @@ document.addEventListener('DOMContentLoaded', function(){
 			return false;
 		}
 		
+
 		if(!isNameOk){
 			return false;
 		}
 		
+
 		if(!isNickOk){
 			return false;
 		}
 		
+
 		if(!isEmailOk){
 			return false;
 		}
 		
-		if(!isHpOk){
+		
+		if(!isHpOk){			
 			return false;
 		}
 		

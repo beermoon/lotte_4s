@@ -24,12 +24,9 @@ public class ResetPasswordController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		HttpSession session = req.getSession();
-		String userId = (String) session.getAttribute("userId");
-		
+		String userId = (String) session.getAttribute("userId"); // 로그인 전이라서 세션정보가 없기때문에 필요하다
 		
 		req.setAttribute("uid", userId);
-		//logger.debug("uid: "+userId);
-		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/search/reset-password.jsp");
 		dispatcher.forward(req, resp);

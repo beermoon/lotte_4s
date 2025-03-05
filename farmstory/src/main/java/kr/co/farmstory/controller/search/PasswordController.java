@@ -2,9 +2,6 @@ package kr.co.farmstory.controller.search;
 
 import java.io.IOException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gson.JsonObject;
 
 import jakarta.servlet.RequestDispatcher;
@@ -14,7 +11,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import kr.co.farmstory.dto.UserDTO;
 import kr.co.farmstory.service.UserService;
 
 @WebServlet("/search/password.do")
@@ -23,9 +19,6 @@ public class PasswordController extends HttpServlet{
 	private static final long serialVersionUID = 2771122766910939326L;
 	
 	private UserService service = UserService.INSTANCE;
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
