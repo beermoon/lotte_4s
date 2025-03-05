@@ -29,7 +29,6 @@ private static final long serialVersionUID = 6702814985301369938L;
 private CommunityService service = CommunityService.INSTANCE;
 private CommentService commentService = CommentService.INSTANCE;
 
-private CommentService commentService = CommentService.INSTANCE; 
 
 
 private Logger logger = LoggerFactory.getLogger(this.getClass());

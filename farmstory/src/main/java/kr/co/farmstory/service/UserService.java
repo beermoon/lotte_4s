@@ -42,8 +42,8 @@ public enum UserService {
 		return dao.selectUserId(dto);
 	}
 	
-	public String findUserPass(UserDTO dto) { // 비밀번호 찾기
-		return dao.selectUserPass(dto);
+	public String findUserPass(String email) { // 비밀번호 찾기
+		return dao.selectUserPass(email);
 	}
 	
 	public List<UserDTO> findAllUser() {
@@ -74,10 +74,10 @@ public enum UserService {
 		int code = ThreadLocalRandom.current().nextInt(100000, 1000000);
 		
 		// Gmail 기본정보
-		String sender = "Feathermoon@gmail.com";
-		String title = "jboard 인증코드 입니다.";
+		String sender = "sohyoun26@gmail.com";
+		String title = "farmstory 인증코드 입니다.";
 		String content = "<h1>인증코드는 " + code + "입니다.</h1>";
-		String appPassword = "ixrp ntly zgft xkiv";
+		String appPassword = "tvei afbq vcfz jzio";
 		
 		// Gmail SMTP 서버 설정
 		Properties prop = new Properties();

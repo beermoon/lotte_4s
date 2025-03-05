@@ -77,12 +77,7 @@ private static final long serialVersionUID = 6702814985301369938L;
 				
 		
 		// 이동
-		resp.sendRedirect("/farmstory/community/today-menu.do");
+		resp.sendRedirect("/farmstory/community/notices.do");
 		
 	}
 }
-
-	
-	
-
-
