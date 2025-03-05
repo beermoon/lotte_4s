@@ -486,11 +486,11 @@
                     <img src="../images/sub_aside_bg_line.png" alt="목록선">
                     <div class="list"> <!--수정-->
                   
-                        <a href="../community/notices.html"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
-                        <a href="../community/today-menu.html"><img src="../images/sub_cate5_lnb2_ov.png" alt="오늘의식단" ></a>
-                        <a href="../community/recipe-sharing.html"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사" value="나도 요리사" ></a>
-                        <a href="../community/customer-inquiry.html"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
-                        <a href="../community/faq.html"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
+                        <a href="../community/notices.do"><img src="../images/sub_cate5_lnb1.png" alt="공지사항"></a>
+                        <a href="../community/today-menu.do"><img src="../images/sub_cate5_lnb2_ov.png" alt="오늘의식단" ></a>
+                        <a href="../community/recipe-sharing.do"><img src="../images/sub_cate5_lnb3.png" alt="나도요리사" value="나도 요리사" ></a>
+                        <a href="../community/customer-inquiry.do"><img src="../images/sub_cate5_lnb4.png" alt="1:1고객문의"></a>
+                        <a href="../community/faq.do"><img src="../images/sub_cate5_lnb5.png" alt="자주묻는질문"></a>
                       
                     </div>
                 </aside>

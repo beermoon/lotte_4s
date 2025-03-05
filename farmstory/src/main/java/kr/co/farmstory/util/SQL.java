@@ -94,7 +94,7 @@ public class SQL {
 															
 
 												
-	public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
 
 
 	
@@ -103,7 +103,7 @@ public class SQL {
 
 																
 		
-		public static final String INSERT_COMMUNITY = "insert into `Community` set "
+		
 
 												
 	public static final String INSERT_COMMUNITY = "insert into `Community` set "
@@ -121,12 +121,11 @@ public class SQL {
 		
 		
 		
-	// comment
-	public static final String INSERT_COMMENT = "insert into `comment` set "
+	
 
 		// comment
 		public static final String INSERT_COMMENT = "insert into `comment` set "
-
+													
 													+ "`parent`=?,"
 													+ "`content`=?,"
 													+ "`writer`=?,"
@@ -173,5 +172,5 @@ public class SQL {
 
 
 			
-}
+
 

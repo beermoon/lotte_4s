@@ -29,7 +29,7 @@ private static final long serialVersionUID = 6702814985301369938L;
 private CommunityService service = CommunityService.INSTANCE;
 private CommentService commentService = CommentService.INSTANCE;
 
-private CommentService commentService = CommentService.INSTANCE; 
+
 
 
 private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -50,6 +50,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 		req.setAttribute("communityDTO", communityDTO);
 		req.setAttribute("comments", comments);
 				
+		
 		// View forward
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/community/recipe-sharing.jsp");
 		dispatcher.forward(req, resp);
@@ -61,7 +62,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 		
 		
 		
-
+		
 		
 		//이동
 		resp.sendRedirect("/farmstory/community/recipe-sharing.do");
