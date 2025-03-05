@@ -41,19 +41,10 @@ public class SQL {
 											+ "`addr2`=?,"
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
-
-
 	
-
-						
-	
-
 	public static final String SEARCH_USER = "SELECT `name`, `uid`, `email`, `regDate` "
 											+ "FROM `user` "
 											+ "WHERE `name`=? AND `email`=?";
-	
-	
-
 	
 
 
@@ -91,21 +82,7 @@ public class SQL {
 	public final static String WHERE_FOR_SEARCH_WRITER  = "WHERE `nick` LIKE ? ";	
 	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
-															
-
-												
-	public static final String INSERT_COMMUNITY = "insert into `Community` set "
-
-
-	
-	
-
-
-																
-		
-		public static final String INSERT_COMMUNITY = "insert into `Community` set "
-
-												
+																									
 	public static final String INSERT_COMMUNITY = "insert into `Community` set "
 
 
@@ -117,24 +94,15 @@ public class SQL {
 														+ "`regip`=?,"
 														+ "`wdate`=NOW()";
 		
-		
-		
-		
-		
+
 	// comment
 	public static final String INSERT_COMMENT = "insert into `comment` set "
-
-		// comment
-		public static final String INSERT_COMMENT = "insert into `comment` set "
 
 													+ "`parent`=?,"
 													+ "`content`=?,"
 													+ "`writer`=?,"
 													+ "`regip`=?,";
-													
-		
 
-	
 	public static final String SELECT_ALL_COMMENT_BY_PARENT = "SELECT "
 																+ "c.*, "
 																+ "u.`nick` "
@@ -173,5 +141,5 @@ public class SQL {
 
 
 			
-}
+
 

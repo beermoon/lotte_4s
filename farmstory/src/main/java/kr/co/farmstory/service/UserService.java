@@ -42,8 +42,8 @@ public enum UserService {
 		return dao.selectUserId(dto);
 	}
 	
-	public String findUserPass(UserDTO dto) { // 비밀번호 찾기
-		return dao.selectUserPass(dto);
+	public String findUserPass(String email) { // 비밀번호 찾기
+		return dao.selectUserPass(email);
 	}
 	
 	public List<UserDTO> findAllUser() {
