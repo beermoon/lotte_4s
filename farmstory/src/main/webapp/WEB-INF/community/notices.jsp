@@ -327,7 +327,7 @@ section.list > .page > .current {
 	                    <c:forEach var="community" items="${requestScope.communitys}">
 		                    <tr>
 		                        <td>${pageStartNum}</td>
-		                        <td><a href="/farmstory/community/recipesharing.do?no=${community.no}">${community.title}[${community.comment}]</a></td>
+		                        <td><a href="/farmstory/community/recipe-sharing.do?no=${community.no}">${community.title}[${community.comment}]</a></td>
 		                        <td>${community.nick}</td>
 		                        <td>${community.wdate}</td>
 		                        <td>${community.hit}</td>
