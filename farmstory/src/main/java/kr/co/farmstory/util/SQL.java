@@ -31,6 +31,20 @@ public class SQL {
 											+ "`addr2`=?,"
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
+
+	
+
+						
+	
+
+	public static final String SEARCH_USER = "SELECT `name`, `uid`, `email`, `regDate` "
+											+ "FROM `user` "
+											+ "WHERE `name`=? AND `email`=?";
+	
+	
+
+	
+
 	// community
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `Community`";
 	public static final String SELECT_COUNT_COMMUNITY = "SELECT COUNT(*) FROM `Community`";
@@ -66,8 +80,18 @@ public class SQL {
 	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
 															
+
+	
+	
+
+
+																
+		
+		public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
 												
 	public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
 														+ "`cate`=?,"
 														+ "`title`=?,"
 														+ "`content`=?,"
@@ -84,11 +108,11 @@ public class SQL {
 		public static final String INSERT_COMMENT = "insert into `comment` set "
 													+ "`parent`=?,"
 													+ "`content`=?,"
-													+ "`file`=?,"
 													+ "`writer`=?,"
 													+ "`regip`=?,";
 													
 		
+
 	
 	public static final String SELECT_ALL_COMMENT_BY_PARENT = "SELECT "
 																+ "c.*, "
@@ -115,5 +139,16 @@ public class SQL {
 	public final static String SELECT_FILE_BY_FNO = "select * from `file` where `fno`=?";
 	public final static String UPDATE_FILE_DOWNLOAD_COUNT = "UPDATE `file` SET `download` = `download` + 1 WHERE `fno`=?";
 	
+
+		
+	
+
+}	
+						
+
+
+
+
 			
 }
+
