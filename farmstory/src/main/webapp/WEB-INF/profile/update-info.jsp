@@ -31,7 +31,7 @@
 
     main > .main_btm {
         width: 100%;
-        height: 786px;
+        height: 850px;
         display: flex;
     }
 
@@ -76,7 +76,7 @@
     main > .main_btm > article {
         position: relative;
         width: 802px;
-        height: auto;
+        height: 850px;
     }
 
     main > .main_btm > article > nav {
@@ -172,9 +172,9 @@
   </style>
 </head>
 <body>
-
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="/farmstory/js/daumPostcode.js"></script>
 	<script src="/farmstory/js/validation.js"></script>
-	
     <div id="wrapper">
         <header>
             <img src="/farmstory/images/head_top_line.png" alt="헤더 선">
@@ -237,7 +237,8 @@
                     </nav>
                     <div class="content">
                         <p>회원정보 설정</p>
-                        <form action="/farmstory/profile/updateinfo.do" name="formRegister" method="post">
+                        <!-- /farmstory/profile/updateinfo.do -->
+                        <form action="#" name="formRegister" method="post">
                             <table class="setting">
                                 <tr>
                                     <td>아이디</td>
@@ -277,19 +278,20 @@
                                     <td>별명</td>
                                     <td>
                                     	<p>공백없는 한글, 영문, 숫자 입력</p><br>
-                                        <input type="text" placeholder="별명 입력" size="25;" style="height: 25px;">
+                                        <input type="text" name="nick" placeholder="별명 입력" size="25;" style="height: 25px;">
                                         <button type="button" id="btnCheckNick"><img src="/farmstory/images/user/chk_id.gif" alt="중복확인"></button> 
+                                    	<span class="nickResult"></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>이메일</td>
                                     <td>
-                                    	<input type="text" name="email" placeholder="이메일 입력" size="25;" style="height: 25px;">
+                                    	<input type="email" name="email" placeholder="이메일 입력" size="25;" style="height: 25px;">
                                         <button type="button" id="btnSendEmail"><img src="/farmstory/images/user/chk_auth.gif" alt="인증번호"></button> 
                                     	<span class="emailResult"></span>
-                                		<div class="auth">
+                                		<div class="auth" style="display: none;">
                                     		<input type="text" name="auth" placeholder="인증번호 입력"/>
-                                    		<button type="button" id="btnAuthEmail"><img src="/farmstory/images/chk_confirm.gif" alt="확인"/></button>
+                                    		<button type="button" id="btnAuthEmail">확인</button>
                                     	</div>
                                     </td>
                                 </tr>
@@ -303,10 +305,10 @@
                                 <tr>
                                     <td>주소</td>
                                     <td>
-                                    	<input type="text" name="zip" readonly placeholder="우편번호" size="25;" style="height: 25px;">
+                                    	<input type="text" name="zip" id="zip" readonly placeholder="우편번호" size="25;" style="height: 25px;">
                                         <button type="button" onclick="daumPostcode()"><img src="../images/user/chk_post.gif" alt="우편번호찾기"/></button>
-                                        <input type="text" name="addr1" readonly placeholder="주소검색" size="25;" style="width: 400px; height: 25px;"><br>  
-                                        <input type="text" name="addr2" placeholder="상세주소 입력" size="25;" style="width: 400px; height: 25px;">
+                                        <input type="text" name="addr1" id="addr1" readonly placeholder="주소검색" size="25;" style="width: 400px; height: 25px;"><br>  
+                                        <input type="text" name="addr2" id="addr2" placeholder="상세주소 입력" size="25;" style="width: 400px; height: 25px;">
                                     </td>
                                 </tr>
                                 <tr>
@@ -315,8 +317,8 @@
                                 </tr>
                             </table>
                             <div class="buttons">
-                                <a href="#" class="cancle">취소</a>
-                                <input type="button" class="u_modify" value="회원수정">
+                                <button class="btnCancel"><a href="/farmstory/main/main.do">취소</a></button>
+                        		<input type="submit" value="회원수정" class="btn btnRegister"/>
                             </div>
                         </form>
                     </div>

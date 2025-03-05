@@ -390,7 +390,6 @@
             height: 124px;
             margin-bottom: 16px;
             box-sizing: border-box;
-            background: url(/farmstory/images/main_sub2);
             margin-top: 18px;
 
         }
@@ -512,7 +511,7 @@
             <span class="home">
                 <a href="/farmstory/main/main.do">HOME</a>&thinsp;|&thinsp;
                 <a href="/farmstory/user/login.do">로그인</a>&thinsp;|&thinsp;
-                <a href="/farmstory/user/register.do">회원가입</a>&thinsp;|&thinsp;
+                <a href="/farmstory/user/terms.do">회원가입</a>&thinsp;|&thinsp;
                 <a href="/farmstory/profile/cart.do">나의정보</a>&thinsp;|&thinsp;
                 <a href="/farmstory/user/logout.do">로그아웃</a>&thinsp;|&thinsp;
                 <a href="/farmstory/admin-dashboard/dashboard.do">관리자</a>&thinsp;|&thinsp;

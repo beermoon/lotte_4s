@@ -30,11 +30,9 @@ public class RegisterController extends HttpServlet{
 		
 		String uid = req.getParameter("uid");
 		String pass1 = req.getParameter("pass1");
-		String pass2 = req.getParameter("pass2");
 		String name= req.getParameter("name");
 		String nick = req.getParameter("nick");
 		String email = req.getParameter("email");
-		String auth = req.getParameter("auth");
 		String hp = req.getParameter("hp");
 		String zip = req.getParameter("zip");
 		String addr1 = req.getParameter("addr1");

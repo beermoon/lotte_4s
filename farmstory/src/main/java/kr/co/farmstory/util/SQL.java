@@ -18,7 +18,17 @@ public class SQL {
 	public static final String SELECT_USER = "select * from `user` where `uid`=? and `pass`=SHA2(?, 256)";
 	
 	public static final String UPDATE_USER_PASS = "UPDATE `user` SET `pass`=SHA2(?,256) WHERE `uid` =?";
-	
+	public static final String UPDATE_USER = "UPDATE `user` SET "
+											 + "`pass` = SHA2(?, 256), "
+											 + "`name` = ?, "
+											 + "`nick` = ?, "
+											 + "`email` = ?, "
+											 + "`hp` = ?, "
+											 + "`zip` = ?, "
+											 + "`addr1` = ?, "
+											 + "`addr2` = ? "
+											 + "WHERE `uid` = ?";
+									
 	public static final String INSERT_USER = "insert into `user` set "
 											+ "`uid`=?,"
 											+ "`pass`=SHA2(?, 256),"
@@ -32,6 +42,7 @@ public class SQL {
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
 
+
 	
 
 						
@@ -44,6 +55,7 @@ public class SQL {
 	
 
 	
+
 
 	// community
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `Community`";
@@ -81,6 +93,10 @@ public class SQL {
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
 															
 
+												
+	public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
+
 	
 	
 
@@ -91,6 +107,7 @@ public class SQL {
 
 												
 	public static final String INSERT_COMMUNITY = "insert into `Community` set "
+
 
 														+ "`cate`=?,"
 														+ "`title`=?,"
@@ -104,8 +121,12 @@ public class SQL {
 		
 		
 		
+	// comment
+	public static final String INSERT_COMMENT = "insert into `comment` set "
+
 		// comment
 		public static final String INSERT_COMMENT = "insert into `comment` set "
+
 													+ "`parent`=?,"
 													+ "`content`=?,"
 													+ "`writer`=?,"
@@ -140,11 +161,13 @@ public class SQL {
 	public final static String UPDATE_FILE_DOWNLOAD_COUNT = "UPDATE `file` SET `download` = `download` + 1 WHERE `fno`=?";
 	
 
+
 		
 	
 
 }	
 						
+
 
 
 

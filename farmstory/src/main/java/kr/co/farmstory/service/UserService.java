@@ -12,12 +12,17 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import kr.co.farmstory.dao.UserDAO;
 import kr.co.farmstory.dto.UserDTO;
 
 public enum UserService {
 	
 	INSTANCE;
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private UserDAO dao = UserDAO.getInstance();
 	
@@ -44,8 +49,16 @@ public enum UserService {
 	public List<UserDTO> findAllUser() {
 		return dao.selectAllUser();
 	}
+
+	public int modifyUserPass(UserDTO dto) { // 새 비밀번호 설정
+		
+		return dao.updateUserPass(dto);
+	}
 	
+
+
 	public void modifyUser(UserDTO dto) {
+		logger.debug(dto.toString());
 		dao.updateUser(dto);
 		
 	}
